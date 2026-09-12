@@ -30,11 +30,11 @@ class BugcordhookService(private val http: HttpService) {
     fun getBugcordhookUrl(version: SemVer): String = "$DOWNLOAD_BASE/$version/$AAR_NAME"
 
     private companion object {
-        const val LATEST_RELEASE_URL = "https://api.github.com/repos/$ORG/$HOOK_REPO/releases/latest"
-        const val DOWNLOAD_BASE = "https://github.com/$ORG/$HOOK_REPO/releases/download"
-
         const val ORG = "heavycaffeiner"
         const val HOOK_REPO = "Bugcord-Hook"
         const val AAR_NAME = "Bugcordhook.aar"
+
+        const val LATEST_RELEASE_URL = "https://api.github.com/repos/$ORG/$HOOK_REPO/releases/latest"
+        const val DOWNLOAD_BASE = "https://github.com/$ORG/$HOOK_REPO/releases/download"
     }
 }
