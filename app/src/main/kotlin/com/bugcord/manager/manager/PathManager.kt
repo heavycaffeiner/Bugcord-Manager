@@ -141,4 +141,18 @@ class PathManager(
     fun cachedKotlinDex(version: SemVer) = patchingDownloadDir
         .resolve("kotlin-stdlib")
         .resolve("$version.dex")
+
+    /**
+     * Resolve a specific path for a versioned cached BugcordVoice build
+     */
+    fun cachedBugcordvoiceAAR(version: SemVer) = patchingDownloadDir
+        .resolve("bugcordvoice")
+        .resolve("$version.aar")
+
+    /**
+     * Resolve a specific path for a cached Discord split APK carrying libdiscord.so.
+     */
+    fun cachedLibdiscordApk(version: Int, abi: String) = patchingDownloadDir
+        .resolve("libdiscord/$version")
+        .resolve("config-$abi.apk")
 }

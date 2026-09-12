@@ -1,5 +1,6 @@
 package com.bugcord.manager.network.services
 
+import com.bugcord.manager.BuildConfig
 import com.bugcord.manager.di.cacheControl
 import com.bugcord.manager.network.models.GithubRelease
 import com.bugcord.manager.network.utils.*
@@ -29,10 +30,23 @@ class BugcordhookService(private val http: HttpService) {
 
     fun getBugcordhookUrl(version: SemVer): String = "$DOWNLOAD_BASE/$version/$AAR_NAME"
 
+    /**
+     * The voice library is built by the core repository and published to its builds branch.
+     */
+    fun getBugcordvoiceUrl(): String = VOICE_URL
+
+    /**
+     * The Discord split APK of the requested build and ABI carries libdiscord.so.
+     */
+    fun getLibraryApkUrl(version: Int, abi: String): String =
+        "${BuildConfig.MAVEN_URL}/com/discord/discord/$version/config-$abi.apk"
+
     private companion object {
         const val ORG = "heavycaffeiner"
         const val HOOK_REPO = "Bugcord-Hook"
         const val AAR_NAME = "Bugcordhook.aar"
+        const val VOICE_URL =
+            "https://raw.githubusercontent.com/$ORG/Bugcord/builds/Bugcordvoice.aar"
 
         const val LATEST_RELEASE_URL = "https://api.github.com/repos/$ORG/$HOOK_REPO/releases/latest"
         const val DOWNLOAD_BASE = "https://github.com/$ORG/$HOOK_REPO/releases/download"

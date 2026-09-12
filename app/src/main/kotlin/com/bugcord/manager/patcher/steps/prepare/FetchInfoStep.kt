@@ -36,6 +36,16 @@ class FetchInfoStep : Step(), KoinComponent {
     lateinit var bugcordhookVersion: SemVer
         private set
 
+    /**
+     * Version of the BugcordVoice library published to the core repository's builds branch.
+     */
+    val bugcordvoiceVersion: SemVer = SemVer(1, 0, 0)
+
+    /**
+     * Discord build whose libdiscord.so is used as the voice engine.
+     */
+    val libdiscordVersion: Int = 333205
+
     override suspend fun execute(container: StepRunner) {
         container.log("Fetching ${BugcordGithubService.DATA_JSON_URL}")
         data = github.getBuildData(force = true).getOrThrow()

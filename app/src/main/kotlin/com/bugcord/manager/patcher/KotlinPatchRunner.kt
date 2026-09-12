@@ -24,6 +24,8 @@ class KotlinPatchRunner(
         DownloadInjectorStep(options.customInjector),
         DownloadBugcordhookStep(),
         DownloadKotlinStep(),
+        DownloadBugcordvoiceStep(),
+        DownloadLibdiscordStep(),
         DownloadPatchesStep(options.customPatches),
         CopyDependenciesStep(),
 
@@ -34,6 +36,7 @@ class KotlinPatchRunner(
         PatchCertsStep(),
         ReorganizeDexStep(),
         AddBugcordhookLibsStep(),
+        ReplaceLibdiscordStep(),
         SaveMetadataStep(options),
 
         // Install
