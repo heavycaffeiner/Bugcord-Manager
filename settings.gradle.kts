@@ -14,11 +14,11 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         maven {
-            name = "aliucord"
+            name = "bugcord"
             url = uri("https://maven.aliucord.com/releases")
         }
     }
 }
 
-rootProject.name = "AliucordManager"
+rootProject.name = "BugcordManager"
 include(":app")

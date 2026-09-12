@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-  <string name="app_name">Menedżer Aliucorda</string>
+  <string name="app_name">Menedżer Bugcorda</string>
   <string name="app_description">Modyfikacja Androidowej aplikacji Discord</string>
   <string name="support_server">Serwer wsparcia</string>
   <string name="installer">Instalator</string>
@@ -15,7 +15,7 @@
   <string name="action_install">Zainstaluj</string>
   <string name="action_uninstall">Odinstaluj</string>
   <string name="action_add_install">Add Installation</string>
-  <string name="action_update_install">Update Aliucord Installation</string>
+  <string name="action_update_install">Update Bugcord Installation</string>
   <string name="action_update">Aktualizuj</string>
   <string name="action_clear">Wyczyść</string>
   <string name="action_delete">Usuń</string>
@@ -34,7 +34,7 @@
   <string name="intent_import_component_success">Pomyślnie zaimportowano %s</string>
   <string name="intent_import_component_failure">Nie udało się zaimportować niestandardowego komponentu!</string>
   <string name="permissions_title">Przyznaj uprawnienia</string>
-  <string name="permissions_subtitle">Menedżer Aliucorda wymaga uprawnień:</string>
+  <string name="permissions_subtitle">Menedżer Bugcorda wymaga uprawnień:</string>
   <string name="permissions_legend">%s wskazuje wymagane uprawnienia!</string>
   <string name="permissions_grant">Przyznaj</string>
   <string name="permissions_granted">Przyznano</string>
@@ -43,16 +43,16 @@
   <string name="permissions_install_title">Instalacja z nieznanych źródeł</string>
   <string name="permissions_install_desc">Uprawnienia są wymagane do rozpoczęcia instalacji z tej aplikacji.</string>
   <string name="permissions_storage_title">Pamięć zewnętrzna</string>
-  <string name="permissions_storage_desc">Aliucord i Menedżer przechowują współdzielone dane w ~/Aliucord, co wymaga pełnych uprawnień do przechowywania. Miejsce na dane ograniczone nie jest obecnie obsługiwane.</string>
+  <string name="permissions_storage_desc">Bugcord i Menedżer przechowują współdzielone dane w ~/Bugcord, co wymaga pełnych uprawnień do przechowywania. Miejsce na dane ograniczone nie jest obecnie obsługiwane.</string>
   <string name="permissions_notifs_title">Powiadomienia</string>
   <string name="permissions_battery_title">Bateria w tle</string>
   <string name="permissions_battery_desc">Zapewnia, że proces instalacji nie zostanie automatycznie anulowany, jeżeli aplikacja zostanie zminimalizowana.</string>
-  <string name="permissions_notifs_desc">Używane tylko do wyświetlania postępu pobierania, jeśli Menedżer Aliucorda jest zminimalizowany podczas instalacji.</string>
+  <string name="permissions_notifs_desc">Używane tylko do wyświetlania postępu pobierania, jeśli Menedżer Bugcorda jest zminimalizowany podczas instalacji.</string>
   <string name="permissions_root_denied">Nie udało się uzyskać uprawnień roota</string>
   <string name="permissions_shizuku_denied">Nie udało się uzyskać uprawnień Shizuku</string>
   <string name="permissions_dhizuku_denied">Nie udało się uzyskać uprawnień Shizuku</string>
   <string name="installs_no_installs">No installations founds!</string>
-  <string name="launch_aliucord_fail">Nie udało się uruchomić Aliucorda</string>
+  <string name="launch_bugcord_fail">Nie udało się uruchomić Bugcorda</string>
   <string name="settings_header_advanced">Zaawansowane</string>
   <string name="settings_header_installation">Instalacja</string>
   <string name="settings_header_appearance">Wygląd</string>
@@ -91,7 +91,7 @@
   <string name="plugins_changelog_media">Dziennik zmian</string>
   <string name="plugins_error">Wystąpił błąd podczas przetwarzania wtyczek!</string>
   <string name="plugins_safe_mode_title">Tryb awaryjny</string>
-  <string name="plugins_safe_mode_desc">Tymczasowo wyłącza wszystkie wtyczki podczas uruchamiania Aliucord</string>
+  <string name="plugins_safe_mode_desc">Tymczasowo wyłącza wszystkie wtyczki podczas uruchamiania Bugcord</string>
   <string name="navigation_back">Wstecz</string>
   <string name="navigation_about">O aplikacji</string>
   <string name="navigation_logs">Dzienniki</string>
@@ -111,16 +111,16 @@
   <string name="version_load_fail">Nie można pobrać wersji</string>
   <string name="installer_file_save_success">Zapisano do %s</string>
   <string name="installer_file_save_failed">Nie udało się zapisać %s</string>
-  <string name="installer_install_success">Pomyślnie zainstalowano Aliucorda</string>
-  <string name="installer_install_aborted">Przerwano instalację Aliucorda</string>
-  <string name="installer_uninstall_new">Odinstaluj obecną wersję Aliucorda, aby kontynuować!</string>
-  <string name="installer_uninstall_success">Pomyślnie zainstalowano Aliucord</string>
+  <string name="installer_install_success">Pomyślnie zainstalowano Bugcorda</string>
+  <string name="installer_install_aborted">Przerwano instalację Bugcorda</string>
+  <string name="installer_uninstall_new">Odinstaluj obecną wersję Bugcorda, aby kontynuować!</string>
+  <string name="installer_uninstall_success">Pomyślnie zainstalowano Bugcord</string>
   <string name="installer_uninstall_aborted">Anulowano odinstalowanie</string>
   <string name="installer_dl_verify_fail">Nie udało się zweryfikować instalacji</string>
   <string name="installer_insufficient_storage">Niewystarczająca ilość miejsca w pamięci!</string>
   <string name="installer_banner_minimization">Ponieważ optymalizacja baterii nie została wyłączona, zminimalizowanie tego ekranu może przerwać proces instalacji!</string>
-  <string name="installer_banner_failure">Instalacja się nie powiodła. Możesz spróbować ponownie lub możesz nacisnąć ten baner, aby otworzyć serwer Aliucord w celu pomocy.</string>
-  <string name="installer_banner_success">Pomyślnie zainstalowano Aliucord! *NIE* usuwaj menedżera (tę aplikację), ponieważ jest on wymagany do wykonywania określonych typów aktualizacji.</string>
+  <string name="installer_banner_failure">Instalacja się nie powiodła. Możesz spróbować ponownie lub możesz nacisnąć ten baner, aby otworzyć serwer Bugcord w celu pomocy.</string>
+  <string name="installer_banner_success">Pomyślnie zainstalowano Bugcord! *NIE* usuwaj menedżera (tę aplikację), ponieważ jest on wymagany do wykonywania określonych typów aktualizacji.</string>
   <string name="install_error_unknown">Nie udało się zainstalować (Powód nieznany)</string>
   <string name="install_error_unhandled_intent">Brak dostępnych obsługi dla %s!</string>
   <string name="install_error_blocked">Instalacja została zablokowana</string>
@@ -138,14 +138,14 @@
   <string name="patch_step_restore_cache">Przywracanie z pamięci podręcznej</string>
   <string name="patch_step_dl_kt_apk">Pobieranie APK Discorda</string>
   <string name="patch_step_dl_kotlin">Pobieranie biblioteki Kotlin</string>
-  <string name="patch_step_dl_injector">Pobieranie injectora Aliucorda</string>
-  <string name="patch_step_dl_aliuhook">Pobieranie biblioteki Aliuhook</string>
+  <string name="patch_step_dl_injector">Pobieranie injectora Bugcorda</string>
+  <string name="patch_step_dl_bugcordhook">Pobieranie biblioteki Bugcordhook</string>
   <string name="patch_step_dl_smali">Pobieranie patchów smali</string>
   <string name="patch_step_copy_deps">Kopiowanie zależności</string>
   <string name="patch_step_patch_manifests">Patchowanie manifestów APK</string>
   <string name="patch_step_patch_certs">Dodawanie nowoczesnych certyfikatów root</string>
   <string name="patch_step_patch_icon">Patchowanie ikony aplikacji</string>
-  <string name="patch_step_add_aliuhook">Dodawanie biblioteki Aliuhook</string>
+  <string name="patch_step_add_bugcordhook">Dodawanie biblioteki Bugcordhook</string>
   <string name="patch_step_patch_smali">Stosowanie patchów smali</string>
   <string name="patch_step_reorganize_dex">Dodawanie plików .dex do aplikacji</string>
   <string name="patch_step_save_metadata">Zachowaj metadane</string>
@@ -161,7 +161,7 @@
   <string name="installer_abort_title">Na pewno chcesz wyjść?</string>
   <string name="installer_abort_body">Are you sure you really want to abort an in-progress installation? Cached files will be cleared to avoid corruption.</string>
   <string name="updater_title">Aktualizowanie do v%s</string>
-  <string name="updater_body">Nowa aktualizacja dla Menadżera Aliucorda! Może być wymagana do prawidłowego działania. Czy chcesz zaktualizować?</string>
+  <string name="updater_body">Nowa aktualizacja dla Menadżera Bugcorda! Może być wymagana do prawidłowego działania. Czy chcesz zaktualizować?</string>
   <string name="updater_open_github">Zobacz wydanie na GitHubie</string>
   <string name="updater_check_fail">Nie udało się sprawdzić aktualizacji!</string>
   <string name="updater_update_fail">Nie udało się zaktualizować! Proszę pobrać i zainstalować te aktualizacje ręcznie!</string>
@@ -172,9 +172,9 @@
   <string name="downloader_err_file_exists">Pobieranie nie powiodło się (Plik istnieje)</string>
   <string name="downloader_err_storage_space">Pobieranie nie powiodło się (Brak miejsca)</string>
   <string name="home_network_fail">Nie udało się pobrać danych!</string>
-  <string name="patchopts_title">Aliucord zapewnia kilka dostosowań podczas instalacji, które nie mogą zostać zmienione po zainstalowaniu aplikacji.</string>
+  <string name="patchopts_title">Bugcord zapewnia kilka dostosowań podczas instalacji, które nie mogą zostać zmienione po zainstalowaniu aplikacji.</string>
   <string name="patchopts_pkgname_title">Nazwa paczki</string>
-  <string name="patchopts_pkgname_desc">Nazwa paczki jest unikalnym identyfikatorem dla wszystkich aplikacji. Korzystanie z różnych nazw pozwoli na zainstalowanie wielu różnych instancji Aliucord.</string>
+  <string name="patchopts_pkgname_desc">Nazwa paczki jest unikalnym identyfikatorem dla wszystkich aplikacji. Korzystanie z różnych nazw pozwoli na zainstalowanie wielu różnych instancji Bugcord.</string>
   <string name="patchopts_pkgname_invalid">Nieprawidłowa nazwa paczki!</string>
   <string name="patchopts_pkgname_taken">Dana aplikacja zostanie nadpisana!</string>
   <string name="patchopts_pkgname_ok">Prawidłowa nazwa pakietu!</string>
@@ -183,7 +183,7 @@
   <string name="patchopts_debuggable_title">Debugowalny</string>
   <string name="patchopts_debuggable_desc">Włącz debugowalność flag manifestu. Używaj tego, tylko jeżeli wiesz, co robisz!</string>
   <string name="patchopts_icon_title">Podmień ikonę aplikacji</string>
-  <string name="patchopts_icon_desc">Changes the app\'s icon to use Aliucord branding instead of Discord\'s own.</string>
+  <string name="patchopts_icon_desc">Changes the app\'s icon to use Bugcord branding instead of Discord\'s own.</string>
   <string name="patchopts_custom_injector_title">Niestandardowa kompilacja</string>
   <string name="patchopts_custom_injector_desc">Niestandardowa kompilacja, która została zaimportowana przez Menedżera.</string>
   <string name="patchopts_custom_patches_title">Niestandardowe patche</string>
@@ -197,7 +197,7 @@
   <string name="iconopts_variant_title_color">Niestandardowy Kolor</string>
   <string name="iconopts_variant_title_image">Niestandardowy obraz</string>
   <string name="iconopts_variant_desc_discord">Nie zmienia oryginalnej ikony, zamiast tego dodaje tylko brakującą ikonę monochromatyczną do pliku APK.</string>
-  <string name="iconopts_variant_desc_aliucord">Zmienia oryginalny kolor ikony na markową Aliucorda.</string>
+  <string name="iconopts_variant_desc_bugcord">Zmienia oryginalny kolor ikony na markową Bugcorda.</string>
   <string name="iconopts_variant_desc_color">Wybierz niestandardowy kolor tła ikony.</string>
   <string name="iconopts_variant_desc_image">Wybierz niestandardowy zamiennik obrazu. Uwaga: Obraz musi mieć wystarczający margines, zgodne z wytycznymi wypełnienia Adaptacyjnych Ikon. Maksymalny rozmiar obrazu to 256KiB.</string>
   <string name="iconopts_colorpicker_title">Odcień &amp; Nasycenie</string>
@@ -235,9 +235,9 @@
   <string name="logs_wipe_desc">Czy na pewno chcesz trwale usunąć wszystkie logi?</string>
   <string name="notif_group_install_title">Aktywna instalacja</string>
   <string name="notif_group_install_desc">Powiadomienia o postępach wysyłane podczas zminimalizowanej instalacji</string>
-  <string name="notif_install_ready_title">Instalacja Aliucorda gotowa!</string>
+  <string name="notif_install_ready_title">Instalacja Bugcorda gotowa!</string>
   <string name="notif_install_ready_desc">Kliknij, aby zainstalować…</string>
-  <string name="notif_install_fail_title">Nie udało się zainstalować Aliucorda</string>
+  <string name="notif_install_fail_title">Nie udało się zainstalować Bugcorda</string>
   <string name="notif_install_fail_desc">Kliknij, aby wyświetlić więcej informacji…</string>
   <string name="play_protect_warning_title">Play Protect</string>
   <string name="play_protect_warning_desc">Ochrona Google Play wydaje się być włączona na twoim urządzeniu. Może to spowodować zakłocenia nowej instalacji ze względu na użycie unikatowego klucza podpisującego. Możesz to wyłączyć w ustawieniach Play Protect.\n\nJeśli wyświetli się okno dialogowe z ostrzeżeniem, naciśnij\n\"Więcej szczegółów\" -&gt; \"Zainstaluj mimo to\"</string>
@@ -246,14 +246,14 @@
   <string name="play_protect_warning_disable">Nie pokazuj ponownie</string>
   <string name="fun_fact_prefix">Ciekawostka: %s</string>
   <string name="fun_fact_1">Czy wiedziałeś, że Google Play Protect jest bezużyteczny?</string>
-  <string name="fun_fact_2">Czy wiedziałeś, że Aliucord z ponad 150 wtyczkami jakoś działa lepiej niż nowa aplikacja Discorda?</string>
-  <string name="fun_fact_3">Czy wiedziałeś, że Aliucord ma ponad 200 dostępnych wtyczek?</string>
+  <string name="fun_fact_2">Czy wiedziałeś, że Bugcord z ponad 150 wtyczkami jakoś działa lepiej niż nowa aplikacja Discorda?</string>
+  <string name="fun_fact_3">Czy wiedziałeś, że Bugcord ma ponad 200 dostępnych wtyczek?</string>
   <string name="fun_fact_4">jestem w twoich ścianach</string>
-  <string name="fun_fact_5">Czy wiesz, że AliucordRN spowodował pojawienie się Enmity oraz Vendetta?</string>
+  <string name="fun_fact_5">Czy wiesz, że BugcordRN spowodował pojawienie się Enmity oraz Vendetta?</string>
   <string name="fun_fact_6">Masz problemy? Odwiedź kanał #support na naszym Discordzie!</string>
   <string name="fun_fact_7">Plugin IWillCrashYourDiscord crashuje discorda.</string>
-  <string name="fun_fact_9">Aliucord jest w stanie odpalić WearOS</string>
-  <string name="fun_fact_10">Aliucord używa *prawdziwe* stare UI, z połowy 2022!</string>
-  <string name="fun_fact_11">Była próba uruchomienia Aliucorda na iOS…</string>
+  <string name="fun_fact_9">Bugcord jest w stanie odpalić WearOS</string>
+  <string name="fun_fact_10">Bugcord używa *prawdziwe* stare UI, z połowy 2022!</string>
+  <string name="fun_fact_11">Była próba uruchomienia Bugcorda na iOS…</string>
   <string name="time_elapsed_seconds">%.2fs</string>
 </resources>

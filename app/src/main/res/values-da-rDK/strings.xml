@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-  <string name="app_name">Aliucord Manager</string>
+  <string name="app_name">Bugcord Manager</string>
   <string name="app_description">En ændring til Discord Android-appen</string>
   <string name="support_server">Supportserver</string>
   <string name="installer">Installer</string>
@@ -15,7 +15,7 @@
   <string name="action_install">Installér</string>
   <string name="action_uninstall">Afinstallér</string>
   <string name="action_add_install">Tilføj Installation</string>
-  <string name="action_update_install">Update Aliucord Installation</string>
+  <string name="action_update_install">Update Bugcord Installation</string>
   <string name="action_update">Opdatér</string>
   <string name="action_clear">Ryd</string>
   <string name="action_delete">Delete</string>
@@ -34,7 +34,7 @@
   <string name="intent_import_component_success">%s er importeret</string>
   <string name="intent_import_component_failure">Mislykkedes at importere tilpasset komponent!</string>
   <string name="permissions_title">Tildel tilladelser</string>
-  <string name="permissions_subtitle">Aliucord Manager kræver tilladelser:</string>
+  <string name="permissions_subtitle">Bugcord Manager kræver tilladelser:</string>
   <string name="permissions_legend">%s angiver nødvendige tilladelser!</string>
   <string name="permissions_grant">Tildel</string>
   <string name="permissions_granted">Tildelte</string>
@@ -43,16 +43,16 @@
   <string name="permissions_install_title">Installér fra Ukendte kilder</string>
   <string name="permissions_install_desc">Tilladelser kræves for at starte en installation fra denne app.</string>
   <string name="permissions_storage_title">Eksternt lager</string>
-  <string name="permissions_storage_desc">Aliucord og Manager lagrer delte data i ~/Aliucord, hvilket kræver fuld lagringstilladelse. Omfangsbaseret lagring understøttes p.t. ikke.</string>
+  <string name="permissions_storage_desc">Bugcord og Manager lagrer delte data i ~/Bugcord, hvilket kræver fuld lagringstilladelse. Omfangsbaseret lagring understøttes p.t. ikke.</string>
   <string name="permissions_notifs_title">Notifikationer</string>
   <string name="permissions_battery_title">Baggrundsbatteri</string>
   <string name="permissions_battery_desc">Sikrer, at installationsprocessen ikke automatisk afbrydes, såfremt appen er minimeret.</string>
-  <string name="permissions_notifs_desc">Bruges kun til at vise download-fremskridt, hvis Aliucord Manager minimeres under installationen.</string>
+  <string name="permissions_notifs_desc">Bruges kun til at vise download-fremskridt, hvis Bugcord Manager minimeres under installationen.</string>
   <string name="permissions_root_denied">Mislykkedes at opnå root-tilladelser</string>
   <string name="permissions_shizuku_denied">Mislykkedes at opnå Shizuku-tilladelser</string>
   <string name="permissions_dhizuku_denied">Mislykkedes at opnå Dhizuku-tilladelser</string>
   <string name="installs_no_installs">Ingen installationer fundet!</string>
-  <string name="launch_aliucord_fail">Aliucord kunne ikke startes</string>
+  <string name="launch_bugcord_fail">Bugcord kunne ikke startes</string>
   <string name="settings_header_advanced">Avanceret</string>
   <string name="settings_header_installation">Installation</string>
   <string name="settings_header_appearance">Udseende</string>
@@ -91,7 +91,7 @@
   <string name="plugins_changelog_media">Ændringslog Medie</string>
   <string name="plugins_error">En fejl opstod under behandlingen af plugins!</string>
   <string name="plugins_safe_mode_title">Sikker tilstand</string>
-  <string name="plugins_safe_mode_desc">Deaktiverer midlertidigt alle plugins, når Aliucord startes</string>
+  <string name="plugins_safe_mode_desc">Deaktiverer midlertidigt alle plugins, når Bugcord startes</string>
   <string name="navigation_back">Tilbage</string>
   <string name="navigation_about">Om</string>
   <string name="navigation_logs">Logger</string>
@@ -111,16 +111,16 @@
   <string name="version_load_fail">Mislykkedes at hente version</string>
   <string name="installer_file_save_success">Gemt til %s</string>
   <string name="installer_file_save_failed">Mislykkedes at gemme %s</string>
-  <string name="installer_install_success">Aliucord er nu installeret</string>
-  <string name="installer_install_aborted">Aliucord-installation afbrudt</string>
-  <string name="installer_uninstall_new">Afinstallér aktuel version af Aliucord for at fortsætte!</string>
-  <string name="installer_uninstall_success">Aliucord er nu afinstalleret</string>
+  <string name="installer_install_success">Bugcord er nu installeret</string>
+  <string name="installer_install_aborted">Bugcord-installation afbrudt</string>
+  <string name="installer_uninstall_new">Afinstallér aktuel version af Bugcord for at fortsætte!</string>
+  <string name="installer_uninstall_success">Bugcord er nu afinstalleret</string>
   <string name="installer_uninstall_aborted">Afinstallation afbrudt</string>
   <string name="installer_dl_verify_fail">Mislykkedes at bekræfte download</string>
   <string name="installer_insufficient_storage">Utilstrækkelig lagerplads!</string>
   <string name="installer_banner_minimization">Da batterioptimeringer ikke er blevet deaktiveret, kan minimering af denne skærm afbryde installationsprocessen!</string>
-  <string name="installer_banner_failure">Installation mislykkedes! Man kan enten prøve igen eller klikke på dette banner for at åbne Aliucord-serveren for at få hjælp.</string>
-  <string name="installer_banner_success">Aliucord er installeret! Afinstallér *IKKE* håndteringen (denne app), da den kræves for udførelse af visse typer opdateringer.</string>
+  <string name="installer_banner_failure">Installation mislykkedes! Man kan enten prøve igen eller klikke på dette banner for at åbne Bugcord-serveren for at få hjælp.</string>
+  <string name="installer_banner_success">Bugcord er installeret! Afinstallér *IKKE* håndteringen (denne app), da den kræves for udførelse af visse typer opdateringer.</string>
   <string name="install_error_unknown">Installationsfejl (ukendt årsag)</string>
   <string name="install_error_unhandled_intent">Ingen håndterer tilgængelige for %s!</string>
   <string name="install_error_blocked">Installation blokeret</string>
@@ -138,14 +138,14 @@
   <string name="patch_step_restore_cache">Gendanner fra cache</string>
   <string name="patch_step_dl_kt_apk">Downloader Discord-APK</string>
   <string name="patch_step_dl_kotlin">Downloader Kotlin Stdlib</string>
-  <string name="patch_step_dl_injector">Downloadier Aliucord Injector</string>
-  <string name="patch_step_dl_aliuhook">Downloader Aliuhook-bibliotek</string>
+  <string name="patch_step_dl_injector">Downloadier Bugcord Injector</string>
+  <string name="patch_step_dl_bugcordhook">Downloader Bugcordhook-bibliotek</string>
   <string name="patch_step_dl_smali">Downloader smali-fejlrettelser</string>
   <string name="patch_step_copy_deps">Kopierer afhængigheder</string>
   <string name="patch_step_patch_manifests">Fejlretter APK-manifest</string>
   <string name="patch_step_patch_certs">Adding modern root certificates</string>
   <string name="patch_step_patch_icon">Fejlretter app-ikon</string>
-  <string name="patch_step_add_aliuhook">Tilføjer Aliuhook-bibliotek</string>
+  <string name="patch_step_add_bugcordhook">Tilføjer Bugcordhook-bibliotek</string>
   <string name="patch_step_patch_smali">Anvender smali-fejlrettelser</string>
   <string name="patch_step_reorganize_dex">Føjer .dex-filer til APK</string>
   <string name="patch_step_save_metadata">Gem metadata</string>
@@ -161,7 +161,7 @@
   <string name="installer_abort_title">Afslut, sikker?</string>
   <string name="installer_abort_body">Sikker på, at den igangværende installation skal afbrydes?</string>
   <string name="updater_title">Opdatér til v%s</string>
-  <string name="updater_body">Ny opdatering udgivet! Den kan være nødvendig for korrekt funktion af Aliucord Manager. Opdatér?</string>
+  <string name="updater_body">Ny opdatering udgivet! Den kan være nødvendig for korrekt funktion af Bugcord Manager. Opdatér?</string>
   <string name="updater_open_github">Se udgivelse på GitHub</string>
   <string name="updater_check_fail">Mislykkedes at tjekke for opdateringer!</string>
   <string name="updater_update_fail">Mislykkedes at opdatere! Download og installér opdateringen manuelt!</string>
@@ -172,9 +172,9 @@
   <string name="downloader_err_file_exists">Download mislykkedes (fil findes)</string>
   <string name="downloader_err_storage_space">Download mislykkedes (utilstrækkelig lagerplads)</string>
   <string name="home_network_fail">Mislykkedes at hente data!</string>
-  <string name="patchopts_title">Aliucord muliggør flere tilpasninger under installationen, som ikke kan ændres efter installation.</string>
+  <string name="patchopts_title">Bugcord muliggør flere tilpasninger under installationen, som ikke kan ændres efter installation.</string>
   <string name="patchopts_pkgname_title">Pakkenavn</string>
-  <string name="patchopts_pkgname_desc">Pakkenavnet er en entydig identifikator for alle apps. Brug af forskellige kan muliggøre flere installationer af Aliucord.</string>
+  <string name="patchopts_pkgname_desc">Pakkenavnet er en entydig identifikator for alle apps. Brug af forskellige kan muliggøre flere installationer af Bugcord.</string>
   <string name="patchopts_pkgname_invalid">Ugyldigt pakkenavn!</string>
   <string name="patchopts_pkgname_taken">Mål-app overskrives!</string>
   <string name="patchopts_pkgname_ok">Ugyldigt pakkenavn!</string>
@@ -183,7 +183,7 @@
   <string name="patchopts_debuggable_title">Fejlfindbar</string>
   <string name="patchopts_debuggable_desc">Aktivér fejlsøgningsmanifestflaget. Brug kun dette, såfremt man ved, hvad man foretager sig!</string>
   <string name="patchopts_icon_title">Udskift app-ikon</string>
-  <string name="patchopts_icon_desc">Changes the app\'s icon to use Aliucord branding instead of Discord\'s own.</string>
+  <string name="patchopts_icon_desc">Changes the app\'s icon to use Bugcord branding instead of Discord\'s own.</string>
   <string name="patchopts_custom_injector_title">Custom Injector</string>
   <string name="patchopts_custom_injector_desc">A custom injector build that was imported by Manager.</string>
   <string name="patchopts_custom_patches_title">Custom Patches</string>
@@ -197,7 +197,7 @@
   <string name="iconopts_variant_title_color">Tilpasset farve</string>
   <string name="iconopts_variant_title_image">Tilpasset billede</string>
   <string name="iconopts_variant_desc_discord">Ændrer ikke det oprindelige ikon, men føjer i stedet blot det manglende monokrome ikon til APK\'en.</string>
-  <string name="iconopts_variant_desc_aliucord">Ændrer den oprindelige ikonfarve til Aliucords branding.</string>
+  <string name="iconopts_variant_desc_bugcord">Ændrer den oprindelige ikonfarve til Bugcords branding.</string>
   <string name="iconopts_variant_desc_color">Vælg en tilpasset ikonbaggrundsfarve.</string>
   <string name="iconopts_variant_desc_image">Vælg et tilpasset erstatningsbillede. Bemærk, at billedet skal have tilstrækkelig polstring iht. retningslinjerne for Adaptive Ikoner. Maks. billedstørrelse er 256KiB.</string>
   <string name="iconopts_colorpicker_title">Farvetone og Farvemætning</string>
@@ -235,9 +235,9 @@
   <string name="logs_wipe_desc">Sikker på, at alle loggerne skal slettes permanent?</string>
   <string name="notif_group_install_title">Aktiv installation</string>
   <string name="notif_group_install_desc">Statusnotifikationer sendt under en minimeret installation</string>
-  <string name="notif_install_ready_title">Aliucord-installationen er klar!</string>
+  <string name="notif_install_ready_title">Bugcord-installationen er klar!</string>
   <string name="notif_install_ready_desc">Klik for at installere…</string>
-  <string name="notif_install_fail_title">Mislykkedes at installere Aliucord</string>
+  <string name="notif_install_fail_title">Mislykkedes at installere Bugcord</string>
   <string name="notif_install_fail_desc">Klik for mere info…</string>
   <string name="play_protect_warning_title">Play Protect</string>
   <string name="play_protect_warning_desc">Google Play Protect ser ud til at være aktiveret på enheden. Den kan forsøge at gribe ind i en ny installation grundet brugen af en unik signeringsnøgle. Den kan deaktiveres via Play Protect-indstillingerne.\n\nVises en advarselsdialog, tryk på\n\"Flere detaljer\" -&gt; \"Installér alligevel\"</string>
@@ -246,14 +246,14 @@
   <string name="play_protect_warning_disable">Vis ikke dette igen</string>
   <string name="fun_fact_prefix">Sjove fakta: %s</string>
   <string name="fun_fact_1">Vidste du, at Google Play Protect er ubrugeligt?</string>
-  <string name="fun_fact_2">Vidste du, at Aliucord med 150+ plugins på en eller anden måde kører bedre end Discords nye app?</string>
-  <string name="fun_fact_3">Vidste du, at Aliucord har flere end 200 tilgængelige plugins?</string>
+  <string name="fun_fact_2">Vidste du, at Bugcord med 150+ plugins på en eller anden måde kører bedre end Discords nye app?</string>
+  <string name="fun_fact_3">Vidste du, at Bugcord har flere end 200 tilgængelige plugins?</string>
   <string name="fun_fact_4">jeg er i dine vægge</string>
-  <string name="fun_fact_5">Vidste du, at AliucordRN affødte Enmity og Vendetta?</string>
+  <string name="fun_fact_5">Vidste du, at BugcordRN affødte Enmity og Vendetta?</string>
   <string name="fun_fact_6">Har problemer? Besøg #support-kanalen i vores Discord!</string>
   <string name="fun_fact_7">IWillCrashYourDiscord-plugin\'et fik discord til at gå ned.</string>
-  <string name="fun_fact_9">Aliucord kan køre på WearOS</string>
-  <string name="fun_fact_10">Aliucord bruger den *rigtige* gamle UI, fra midt-2022!</string>
-  <string name="fun_fact_11">Der var et forsøg på at få Aliucord til at køre på iOS…</string>
+  <string name="fun_fact_9">Bugcord kan køre på WearOS</string>
+  <string name="fun_fact_10">Bugcord bruger den *rigtige* gamle UI, fra midt-2022!</string>
+  <string name="fun_fact_11">Der var et forsøg på at få Bugcord til at køre på iOS…</string>
   <string name="time_elapsed_seconds">%.2fs</string>
 </resources>

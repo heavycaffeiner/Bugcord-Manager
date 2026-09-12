@@ -66,13 +66,13 @@
         android:exported="true"
         android:launchMode="singleTask"
         android:screenOrientation="portrait"
-        android:theme="@style/Theme.AliucordManager.SplashScreen"
+        android:theme="@style/Theme.BugcordManager.SplashScreen"
         tools:ignore="DiscouragedApi,LockedOrientationActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
-        <action android:name="com.aliucord.manager.REINSTALL" />
-        <action android:name="com.aliucord.manager.OPEN_PLUGINS" />
-        <action android:name="com.aliucord.manager.IMPORT_COMPONENT" />
+        <action android:name="com.bugcord.manager.REINSTALL" />
+        <action android:name="com.bugcord.manager.OPEN_PLUGINS" />
+        <action android:name="com.bugcord.manager.IMPORT_COMPONENT" />
 
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>

@@ -1,5 +1,5 @@
 name: Bug/Crash Report
-description: Report a bug or crash in Aliucord Manager. For issues with Aliucord or plugins, please use the plugin's repo or our support server.
+description: Report a bug or crash in Bugcord Manager. For issues with Bugcord or plugins, please use the plugin's repo or our support server.
 labels: [bug]
 body:
   - type: textarea

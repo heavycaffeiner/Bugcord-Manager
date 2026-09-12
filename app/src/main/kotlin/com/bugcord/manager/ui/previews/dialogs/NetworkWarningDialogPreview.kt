@@ -1,0 +1,19 @@
+package com.bugcord.manager.ui.previews.dialogs
+
+import android.content.res.Configuration
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.tooling.preview.Preview
+import com.bugcord.manager.ui.components.dialogs.NetworkWarningDialog
+import com.bugcord.manager.ui.theme.ManagerTheme
+
+@Composable
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_NO)
+private fun NetworkWarningDialogPreview() {
+    ManagerTheme {
+        NetworkWarningDialog(
+            onConfirm = {},
+            onDismiss = {},
+        )
+    }
+}

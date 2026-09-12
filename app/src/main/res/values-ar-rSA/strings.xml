@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-  <string name="app_name">مدير Aliucord</string>
+  <string name="app_name">مدير Bugcord</string>
   <string name="app_description">تعديل لتطبيق ديسكورد على الاندرويد</string>
   <string name="support_server">الدعم</string>
   <string name="installer">المثبت</string>
@@ -15,7 +15,7 @@
   <string name="action_install">تثبيت</string>
   <string name="action_uninstall">إلغاء التثبيت</string>
   <string name="action_add_install">Add Installation</string>
-  <string name="action_update_install">Update Aliucord Installation</string>
+  <string name="action_update_install">Update Bugcord Installation</string>
   <string name="action_update">تحديث</string>
   <string name="action_clear">مسح</string>
   <string name="action_delete">حذف</string>
@@ -34,7 +34,7 @@
   <string name="intent_import_component_success">تم استيراد %s بنجاح</string>
   <string name="intent_import_component_failure">Failed to import custom component!</string>
   <string name="permissions_title">Grant Permissions</string>
-  <string name="permissions_subtitle">يحتاج مدير Aliucord إلى الأذونات التالية:</string>
+  <string name="permissions_subtitle">يحتاج مدير Bugcord إلى الأذونات التالية:</string>
   <string name="permissions_legend">%s indicates required permissions!</string>
   <string name="permissions_grant">Grant</string>
   <string name="permissions_granted">Granted</string>
@@ -43,16 +43,16 @@
   <string name="permissions_install_title">التثبيت من مصادر غير معروفة</string>
   <string name="permissions_install_desc">تحتاج إلى السماح لهذا التطبيق بالأذونات اللازمة لبدء التثبيت من هذا التطبيق.</string>
   <string name="permissions_storage_title">التخزين الخارجي</string>
-  <string name="permissions_storage_desc">Aliucord and Manager stores shared data in ~/Aliucord, which requires full storage permissions. Scoped storage is not currently supported.</string>
+  <string name="permissions_storage_desc">Bugcord and Manager stores shared data in ~/Bugcord, which requires full storage permissions. Scoped storage is not currently supported.</string>
   <string name="permissions_notifs_title">الإشعارات</string>
   <string name="permissions_battery_title">Background Battery</string>
   <string name="permissions_battery_desc">Ensures the installation process does not get automatically cancelled if the app is minimized.</string>
-  <string name="permissions_notifs_desc">Used only to show the download progress if Aliucord Manager is minimized during installation.</string>
+  <string name="permissions_notifs_desc">Used only to show the download progress if Bugcord Manager is minimized during installation.</string>
   <string name="permissions_root_denied">Failed to obtain root permissions</string>
   <string name="permissions_shizuku_denied">تعذر الحصول على أذونات Shizuku</string>
   <string name="permissions_dhizuku_denied">تعذر الحصول على أذونات Dhizuku</string>
   <string name="installs_no_installs">No installations founds!</string>
-  <string name="launch_aliucord_fail">فشل تشغيل Aliucord</string>
+  <string name="launch_bugcord_fail">فشل تشغيل Bugcord</string>
   <string name="settings_header_advanced">خيارات متقدمة</string>
   <string name="settings_header_installation">Installation</string>
   <string name="settings_header_appearance">المظهر</string>
@@ -91,7 +91,7 @@
   <string name="plugins_changelog_media">سجل التغييرات الوسائط </string>
   <string name="plugins_error">حدث خطأ أثناء معالجة الإضافات!</string>
   <string name="plugins_safe_mode_title">Safe mode</string>
-  <string name="plugins_safe_mode_desc">Temporarily disables all plugins when starting Aliucord</string>
+  <string name="plugins_safe_mode_desc">Temporarily disables all plugins when starting Bugcord</string>
   <string name="navigation_back">Back</string>
   <string name="navigation_about">About</string>
   <string name="navigation_logs">Logs</string>
@@ -111,16 +111,16 @@
   <string name="version_load_fail">Failed to retrieve version</string>
   <string name="installer_file_save_success">Saved to %s</string>
   <string name="installer_file_save_failed">Failed to save %s</string>
-  <string name="installer_install_success">تم تثبيت Aliucord بنجاح</string>
-  <string name="installer_install_aborted">تم إلغاء عملية تثبيت Aliucord</string>
+  <string name="installer_install_success">تم تثبيت Bugcord بنجاح</string>
+  <string name="installer_install_aborted">تم إلغاء عملية تثبيت Bugcord</string>
   <string name="installer_uninstall_new">الرجاء حذف الإصدار الحالي من Alicord من أجل الاستمرار</string>
-  <string name="installer_uninstall_success">تم إلغاء تثبيت Aliucord بنجاح</string>
+  <string name="installer_uninstall_success">تم إلغاء تثبيت Bugcord بنجاح</string>
   <string name="installer_uninstall_aborted">تم إلغاء عملية إلغاء التثبيت</string>
   <string name="installer_dl_verify_fail">فشل التحقق من التحميل</string>
   <string name="installer_insufficient_storage">لا توجد مساحة تخزين كافية!</string>
   <string name="installer_banner_minimization">بما أن تحسينات البطارية مفعّلة، قد يؤدي مغادرة هذه الصفحة إلى إيقاف التثبيت!</string>
-  <string name="installer_banner_failure">فشل التثبيت! يمكنك إعادة المحاولة أو الضغط على هذا الشريط لفتح سيرفر الديسكورد الخاص بـ Aliucord للحصول على المساعدة.</string>
-  <string name="installer_banner_success">تم تثبيت Aliucord بنجاح! لا تحذف هذا التطبيق. قد يؤدي حذفه إلى توقف بعض وظائف Aliucord عن العمل، كما سيمنع تثبيت التحديثات والإصلاحات المستقبلية.</string>
+  <string name="installer_banner_failure">فشل التثبيت! يمكنك إعادة المحاولة أو الضغط على هذا الشريط لفتح سيرفر الديسكورد الخاص بـ Bugcord للحصول على المساعدة.</string>
+  <string name="installer_banner_success">تم تثبيت Bugcord بنجاح! لا تحذف هذا التطبيق. قد يؤدي حذفه إلى توقف بعض وظائف Bugcord عن العمل، كما سيمنع تثبيت التحديثات والإصلاحات المستقبلية.</string>
   <string name="install_error_unknown">فشل المُثبّت (لسبب غير معروف)</string>
   <string name="install_error_unhandled_intent">No handlers available for %s!</string>
   <string name="install_error_blocked">Installation was blocked</string>
@@ -139,13 +139,13 @@
   <string name="patch_step_dl_kt_apk">Downloading Discord APK</string>
   <string name="patch_step_dl_kotlin">Downloading Kotlin library</string>
   <string name="patch_step_dl_injector">Downloading injector</string>
-  <string name="patch_step_dl_aliuhook">Downloading Aliuhook library</string>
+  <string name="patch_step_dl_bugcordhook">Downloading Bugcordhook library</string>
   <string name="patch_step_dl_smali">Downloading smali patches</string>
   <string name="patch_step_copy_deps">Copying dependencies</string>
   <string name="patch_step_patch_manifests">Patching apk manifests</string>
   <string name="patch_step_patch_certs">Adding modern root certificates</string>
   <string name="patch_step_patch_icon">Patching app icon</string>
-  <string name="patch_step_add_aliuhook">Adding Aliuhook library</string>
+  <string name="patch_step_add_bugcordhook">Adding Bugcordhook library</string>
   <string name="patch_step_patch_smali">Applying smali patches</string>
   <string name="patch_step_reorganize_dex">Adding .dex files to APK</string>
   <string name="patch_step_save_metadata">Store metadata</string>
@@ -161,7 +161,7 @@
   <string name="installer_abort_title">هل تريد الخروج؟</string>
   <string name="installer_abort_body">Are you sure you really want to abort an in-progress installation? Cached files will be cleared to avoid corruption.</string>
   <string name="updater_title">تم التحديث الي v%s</string>
-  <string name="updater_body">تم إصدار تحديث جديد لمدير Aliucord Manager! قد تكون مطلوبة من أجل العمل بشكل صحيح. هل ترغب في التحديث؟</string>
+  <string name="updater_body">تم إصدار تحديث جديد لمدير Bugcord Manager! قد تكون مطلوبة من أجل العمل بشكل صحيح. هل ترغب في التحديث؟</string>
   <string name="updater_open_github">عرض الإصدار على GitHub</string>
   <string name="updater_check_fail">فشل في التحقق من وجود تحديثات</string>
   <string name="updater_update_fail">Failed to update! Please download and install the update manually!</string>
@@ -172,9 +172,9 @@
   <string name="downloader_err_file_exists">فشل التنزيل (الملف موجود)</string>
   <string name="downloader_err_storage_space">فشل التنزيل (مساحة غير كافية)</string>
   <string name="home_network_fail">فشل في استعادة البيانات</string>
-  <string name="patchopts_title">يوفر Aliucord العديد من التخصيصات في وقت التثبيت والتي لا يمكن تغييرها بمجرد تثبيتها.</string>
+  <string name="patchopts_title">يوفر Bugcord العديد من التخصيصات في وقت التثبيت والتي لا يمكن تغييرها بمجرد تثبيتها.</string>
   <string name="patchopts_pkgname_title">إسم الحزمة</string>
-  <string name="patchopts_pkgname_desc">اسم الحزمة هو معرف فريد لجميع التطبيقات. استخدام التطبيقات المختلفة يمكن أن يسمح لتركيبات متعددة من Aliucord.</string>
+  <string name="patchopts_pkgname_desc">اسم الحزمة هو معرف فريد لجميع التطبيقات. استخدام التطبيقات المختلفة يمكن أن يسمح لتركيبات متعددة من Bugcord.</string>
   <string name="patchopts_pkgname_invalid">اسم الحزمة غير صالح!</string>
   <string name="patchopts_pkgname_taken">سيتم استبدال التطبيق المستهدف! </string>
   <string name="patchopts_pkgname_ok">اسم الحزمة صالح!</string>
@@ -183,7 +183,7 @@
   <string name="patchopts_debuggable_title">Debuggable</string>
   <string name="patchopts_debuggable_desc">Enable the debuggable manifest flag. Only use this if you know what you are doing!</string>
   <string name="patchopts_icon_title">Replace app icon</string>
-  <string name="patchopts_icon_desc">غيّر أيقونة التطبيق إلى أيقونة Aliucord أو أيقونة مخصّصة بدل أيقونة Discord.</string>
+  <string name="patchopts_icon_desc">غيّر أيقونة التطبيق إلى أيقونة Bugcord أو أيقونة مخصّصة بدل أيقونة Discord.</string>
   <string name="patchopts_custom_injector_title">Custom Injector</string>
   <string name="patchopts_custom_injector_desc">A custom injector build that was imported by Manager.</string>
   <string name="patchopts_custom_patches_title">Custom Patches</string>
@@ -197,7 +197,7 @@
   <string name="iconopts_variant_title_color">Custom Color</string>
   <string name="iconopts_variant_title_image">Custom Image</string>
   <string name="iconopts_variant_desc_discord">Does not alter the original icon, instead only adding the missing monochrome icon to the APK.</string>
-  <string name="iconopts_variant_desc_aliucord">Changes the original icon color to Aliucord\'s branding.</string>
+  <string name="iconopts_variant_desc_bugcord">Changes the original icon color to Bugcord\'s branding.</string>
   <string name="iconopts_variant_desc_color">Select a custom icon background color.</string>
   <string name="iconopts_variant_desc_image">Select a custom replacement image. Note that the image must have sufficient padding as per the Adaptive Icon foreground guidelines. Maximum image size is 256KiB.</string>
   <string name="iconopts_colorpicker_title">Hue &amp; Saturation</string>
@@ -235,9 +235,9 @@
   <string name="logs_wipe_desc">Are you sure you want to permanently delete all the logs?</string>
   <string name="notif_group_install_title">Active installation</string>
   <string name="notif_group_install_desc">Progress notifications sent during a minimized installation</string>
-  <string name="notif_install_ready_title">Aliucord installation ready!</string>
+  <string name="notif_install_ready_title">Bugcord installation ready!</string>
   <string name="notif_install_ready_desc">اضغط للتثبيت…</string>
-  <string name="notif_install_fail_title">Aliucord failed to install</string>
+  <string name="notif_install_fail_title">Bugcord failed to install</string>
   <string name="notif_install_fail_desc">Click to view more info…</string>
   <string name="play_protect_warning_title">Play Protect</string>
   <string name="play_protect_warning_desc">Google Play Protect appears to be enabled on your device. It may attempt to interfere with a new installation due to the usage of a unique signing key. You can disable it in Play Protect\'s settings.\n\nIf it does show a warning dialog, press\n\"More Details\" -&gt; \"Install anyway\"</string>
@@ -246,14 +246,14 @@
   <string name="play_protect_warning_disable">لا تظهر هذه مجددًا</string>
   <string name="fun_fact_prefix">معلومة ممتعة: %s</string>
   <string name="fun_fact_1">هل تعلم  أن حماية جوجل بلاي لا يوفّر الحماية الكاملة دائمًا؟</string>
-  <string name="fun_fact_2">Did you know Aliucord with 150+ plugins somehow runs better than Discord\'s new app?</string>
-  <string name="fun_fact_3">Did you know Aliucord has over 200 available plugins?</string>
+  <string name="fun_fact_2">Did you know Bugcord with 150+ plugins somehow runs better than Discord\'s new app?</string>
+  <string name="fun_fact_3">Did you know Bugcord has over 200 available plugins?</string>
   <string name="fun_fact_4">i am in your walls</string>
-  <string name="fun_fact_5">Did you know AliucordRN spawned Enmity and Vendetta?</string>
+  <string name="fun_fact_5">Did you know BugcordRN spawned Enmity and Vendetta?</string>
   <string name="fun_fact_6">هل تواجه مشاكل؟ تفضل بزيارة قناة #support في سيرفر Discord الخاص بنا!</string>
   <string name="fun_fact_7">The IWillCrashYourDiscord plugin crashes your discord.</string>
-  <string name="fun_fact_9">Aliucord can run on WearOS</string>
-  <string name="fun_fact_10">Aliucord uses the *real* old UI, from mid-2022!</string>
-  <string name="fun_fact_11">There was an attempt to make Aliucord run on iOS…</string>
+  <string name="fun_fact_9">Bugcord can run on WearOS</string>
+  <string name="fun_fact_10">Bugcord uses the *real* old UI, from mid-2022!</string>
+  <string name="fun_fact_11">There was an attempt to make Bugcord run on iOS…</string>
   <string name="time_elapsed_seconds">%.2fs</string>
 </resources>

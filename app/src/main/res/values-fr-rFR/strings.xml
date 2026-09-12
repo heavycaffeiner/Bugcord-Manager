@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-  <string name="app_name">Gestionnaire d\'Aliucord</string>
+  <string name="app_name">Gestionnaire d\'Bugcord</string>
   <string name="app_description">Une modification pour l\'application Android de Discord</string>
   <string name="support_server">Supporter le Serveur</string>
   <string name="installer">Installateur</string>
@@ -34,7 +34,7 @@
   <string name="intent_import_component_success">%s importé avec succès</string>
   <string name="intent_import_component_failure">Échec de l\'importation du composant personnalisé !</string>
   <string name="permissions_title">Accorder les permissions</string>
-  <string name="permissions_subtitle">Le Gestionnaire d\'Aliucord nécessite des permissions :</string>
+  <string name="permissions_subtitle">Le Gestionnaire d\'Bugcord nécessite des permissions :</string>
   <string name="permissions_legend">%s indique les permissions requises !</string>
   <string name="permissions_grant">Accorder</string>
   <string name="permissions_granted">Accordée</string>
@@ -43,16 +43,16 @@
   <string name="permissions_install_title">Installer à partir de sources inconnues</string>
   <string name="permissions_install_desc">Des permissions sont requises pour lancer l\'installation à partir de cette application.</string>
   <string name="permissions_storage_title">Stockage Externe</string>
-  <string name="permissions_storage_desc">Aliucord et le Gestionnaire placent les données partagées dans ~/Aliucord, ce qui nécessite une autorisation complète du stockage. Le stockage limité n\'est pas supporté actuellement.</string>
+  <string name="permissions_storage_desc">Bugcord et le Gestionnaire placent les données partagées dans ~/Bugcord, ce qui nécessite une autorisation complète du stockage. Le stockage limité n\'est pas supporté actuellement.</string>
   <string name="permissions_notifs_title">Notifications</string>
   <string name="permissions_battery_title">Batterie en arrière-plan</string>
   <string name="permissions_battery_desc">Veille à ce que le processus d\'installation ne soit pas automatiquement annulé si l\'application est minimisée.</string>
-  <string name="permissions_notifs_desc">Utilisé uniquement pour afficher la progression du téléchargement si Aliucord Manager est minimisé pendant l\'installation.</string>
+  <string name="permissions_notifs_desc">Utilisé uniquement pour afficher la progression du téléchargement si Bugcord Manager est minimisé pendant l\'installation.</string>
   <string name="permissions_root_denied">Échec de l\'obtention des permissions root</string>
   <string name="permissions_shizuku_denied">Échec de l\'obtention des permissions Shizuku</string>
   <string name="permissions_dhizuku_denied">Échec de l\'obtention des permissions de Dhizuku</string>
   <string name="installs_no_installs">Aucune installation trouvée !</string>
-  <string name="launch_aliucord_fail">Impossible de démarrer Aliucord</string>
+  <string name="launch_bugcord_fail">Impossible de démarrer Bugcord</string>
   <string name="settings_header_advanced">Avancé</string>
   <string name="settings_header_installation">Installation</string>
   <string name="settings_header_appearance">Apparence</string>
@@ -91,7 +91,7 @@
   <string name="plugins_changelog_media">Journal des modifications des médias</string>
   <string name="plugins_error">Une erreur s\'est produite lors du traitement des plugins !</string>
   <string name="plugins_safe_mode_title">Mode sécurisé</string>
-  <string name="plugins_safe_mode_desc">Désactive temporairement tous les plugins au démarrage d\'Aliucord</string>
+  <string name="plugins_safe_mode_desc">Désactive temporairement tous les plugins au démarrage d\'Bugcord</string>
   <string name="navigation_back">Retour</string>
   <string name="navigation_about">À propos</string>
   <string name="navigation_logs">Logs</string>
@@ -111,16 +111,16 @@
   <string name="version_load_fail">Échec de récupération de la version</string>
   <string name="installer_file_save_success">Enregistré dans %s</string>
   <string name="installer_file_save_failed">Échec de l\'enregistrement de %s</string>
-  <string name="installer_install_success">Aliucord installé avec succès</string>
-  <string name="installer_install_aborted">Installation d\'Aliucord interrompue</string>
-  <string name="installer_uninstall_new">Veuillez désinstaller votre version actuelle d\'Aliucord pour continuer !</string>
-  <string name="installer_uninstall_success">Aliucord désinstallé avec succès</string>
+  <string name="installer_install_success">Bugcord installé avec succès</string>
+  <string name="installer_install_aborted">Installation d\'Bugcord interrompue</string>
+  <string name="installer_uninstall_new">Veuillez désinstaller votre version actuelle d\'Bugcord pour continuer !</string>
+  <string name="installer_uninstall_success">Bugcord désinstallé avec succès</string>
   <string name="installer_uninstall_aborted">Désinstallation annulée</string>
   <string name="installer_dl_verify_fail">Échec de la vérification du téléchargement</string>
   <string name="installer_insufficient_storage">Espace de stockage insuffisant !</string>
   <string name="installer_banner_minimization">Étant donné que les optimisations de la batterie n\'ont pas été désactivées, minimiser cet écran peut interrompre le processus d\'installation !</string>
-  <string name="installer_banner_failure">L\'installation a échoué ! Vous pouvez réessayer ou cliquer sur cette bannière pour ouvrir le serveur Aliucord pour obtenir de l\'aide.</string>
-  <string name="installer_banner_success">Aliucord installé avec succès ! Ne désinstallez *PAS* le gestionnaire (cette application) car il est nécessaire pour effectuer certains types de mises à jour.</string>
+  <string name="installer_banner_failure">L\'installation a échoué ! Vous pouvez réessayer ou cliquer sur cette bannière pour ouvrir le serveur Bugcord pour obtenir de l\'aide.</string>
+  <string name="installer_banner_success">Bugcord installé avec succès ! Ne désinstallez *PAS* le gestionnaire (cette application) car il est nécessaire pour effectuer certains types de mises à jour.</string>
   <string name="install_error_unknown">Échec de l\'installateur (raison inconnue)</string>
   <string name="install_error_unhandled_intent">Aucun gestionnaire disponible pour %s!</string>
   <string name="install_error_blocked">L\'installation a été bloquée</string>
@@ -139,13 +139,13 @@
   <string name="patch_step_dl_kt_apk">Téléchargement de l\'APK de Discord</string>
   <string name="patch_step_dl_kotlin">Téléchargement de la bibliothèque de Kotlin</string>
   <string name="patch_step_dl_injector">Téléchargement de l\'injecteur</string>
-  <string name="patch_step_dl_aliuhook">Téléchargement de la bibliothèque Aliuhook</string>
+  <string name="patch_step_dl_bugcordhook">Téléchargement de la bibliothèque Bugcordhook</string>
   <string name="patch_step_dl_smali">Téléchargement des patchs smali</string>
   <string name="patch_step_copy_deps">Copie des dépendances</string>
   <string name="patch_step_patch_manifests">Patcher les manifestes apk</string>
   <string name="patch_step_patch_certs">Ajout de certificats racine modernes</string>
   <string name="patch_step_patch_icon">Modification de l\'icône de l\'app</string>
-  <string name="patch_step_add_aliuhook">Ajout de la bibliothèque Aliuhook</string>
+  <string name="patch_step_add_bugcordhook">Ajout de la bibliothèque Bugcordhook</string>
   <string name="patch_step_patch_smali">Application des patchs smali</string>
   <string name="patch_step_reorganize_dex">Ajout des fichiers .dex à l\'APK</string>
   <string name="patch_step_save_metadata">Stockage des métadonnées</string>
@@ -161,7 +161,7 @@
   <string name="installer_abort_title">Voulez-vous vraiment quitter ?</string>
   <string name="installer_abort_body">Êtes-vous sûr de vouloir abandonner une installation en cours ?</string>
   <string name="updater_title">Mettre à jour vers v%s</string>
-  <string name="updater_body">Une nouvelle mise à jour a été publiée pour Aliucord Manager ! Elle peut être nécessaire pour fonctionner correctement. Voulez-vous faire la mise à jour ?</string>
+  <string name="updater_body">Une nouvelle mise à jour a été publiée pour Bugcord Manager ! Elle peut être nécessaire pour fonctionner correctement. Voulez-vous faire la mise à jour ?</string>
   <string name="updater_open_github">Voir la version sur GitHub</string>
   <string name="updater_check_fail">Échec lors de la vérification des mises à jour !</string>
   <string name="updater_update_fail">Échec de la mise à jour ! Veuillez télécharger et installer la mise à jour manuellement !</string>
@@ -172,9 +172,9 @@
   <string name="downloader_err_file_exists">Téléchargement échoué (Fichier existant)</string>
   <string name="downloader_err_storage_space">Téléchargement échoué (Espace insuffisant)</string>
   <string name="home_network_fail">Échec de la récupération des données !</string>
-  <string name="patchopts_title">Aliucord fournit plusieurs personnalisations au moment de l\'installation qui ne peuvent pas être modifiées après l\'installation.</string>
+  <string name="patchopts_title">Bugcord fournit plusieurs personnalisations au moment de l\'installation qui ne peuvent pas être modifiées après l\'installation.</string>
   <string name="patchopts_pkgname_title">Nom du paquet</string>
-  <string name="patchopts_pkgname_desc">Le nom du paquet est un identifiant unique pour chaque application. L\'utilisation de plusieurs peut permettre plusieurs installations d\'Aliucord.</string>
+  <string name="patchopts_pkgname_desc">Le nom du paquet est un identifiant unique pour chaque application. L\'utilisation de plusieurs peut permettre plusieurs installations d\'Bugcord.</string>
   <string name="patchopts_pkgname_invalid">Nom de paquet invalide !</string>
   <string name="patchopts_pkgname_taken">L\'application cible sera écrasée !</string>
   <string name="patchopts_pkgname_ok">Nom de paquet valide !</string>
@@ -183,7 +183,7 @@
   <string name="patchopts_debuggable_title">Débogable</string>
   <string name="patchopts_debuggable_desc">Activez le drapeau débogable dans le manifeste. N\'utilisez cette option que si vous savez ce que vous faites !</string>
   <string name="patchopts_icon_title">Remplacer l\'icône de l\'application</string>
-  <string name="patchopts_icon_desc">Changer l\'icône de l\'application en icône d\'Aliucord (ou une icône personnalisée) au lieu de celle de Discord.</string>
+  <string name="patchopts_icon_desc">Changer l\'icône de l\'application en icône d\'Bugcord (ou une icône personnalisée) au lieu de celle de Discord.</string>
   <string name="patchopts_custom_injector_title">Injecteur personnalisé</string>
   <string name="patchopts_custom_injector_desc">A custom injector build that was imported by Manager.</string>
   <string name="patchopts_custom_patches_title">Correctifs personnalisés</string>
@@ -197,7 +197,7 @@
   <string name="iconopts_variant_title_color">Couleur personnalisée</string>
   <string name="iconopts_variant_title_image">Image personnalisée</string>
   <string name="iconopts_variant_desc_discord">N\'altère pas l\'icône d\'origine, à la place ajoute uniquement l\'icône monochrome manquante dans l\'APK.</string>
-  <string name="iconopts_variant_desc_aliucord">Modifie la couleur de l’icône d’origine pour correspondre à l’image de marque d’Aliucord.</string>
+  <string name="iconopts_variant_desc_bugcord">Modifie la couleur de l’icône d’origine pour correspondre à l’image de marque d’Bugcord.</string>
   <string name="iconopts_variant_desc_color">Sélectionnez une couleur de fond personnalisée pour l’icône.</string>
   <string name="iconopts_variant_desc_image">Sélectionnez une image de remplacement personnalisée. Notez que l\'image doit avoir suffisamment de remplissage selon les directives de premier plan de l\'icône adaptative. La taille maximale de l\'image est de 256 Ko.</string>
   <string name="iconopts_colorpicker_title">Teinte et saturation</string>
@@ -235,9 +235,9 @@
   <string name="logs_wipe_desc">Êtes-vous sûr de vouloir supprimer définitivement tous vos logs ?</string>
   <string name="notif_group_install_title">Installation active</string>
   <string name="notif_group_install_desc">Notifications de progression envoyées lors d\'une installation réduite</string>
-  <string name="notif_install_ready_title">Installation d\'Aliucord prête !</string>
+  <string name="notif_install_ready_title">Installation d\'Bugcord prête !</string>
   <string name="notif_install_ready_desc">Cliquez pour installer…</string>
-  <string name="notif_install_fail_title">L\'installation de Aliucord a échoué</string>
+  <string name="notif_install_fail_title">L\'installation de Bugcord a échoué</string>
   <string name="notif_install_fail_desc">Cliquez pour voir plus d\'informations…</string>
   <string name="play_protect_warning_title">Play Protect</string>
   <string name="play_protect_warning_desc">Google Play Protect semble être activé sur votre appareil. Il peut tenter d\'interférer avec une nouvelle installation en raison de l\'utilisation d\'une clé de connexion unique. Vous pouvez désactiver cela dans les paramètres de Play Protect.\n\nS\'il affiche une fenêtre d\'avertissement, appuyez sur\n\"Plus de détails\" -&gt; \"Installer quand même\"</string>
@@ -246,14 +246,14 @@
   <string name="play_protect_warning_disable">Ne plus afficher</string>
   <string name="fun_fact_prefix">Anecdote amusante : %s</string>
   <string name="fun_fact_1">Saviez-vous que Google Play Protect est inutile ?</string>
-  <string name="fun_fact_2">Saviez-vous qu\'Aliucord avec plus de 150 plugins fonctionne mieux que la nouvelle application de Discord ?</string>
-  <string name="fun_fact_3">Saviez-vous qu\'Aliucord possède plus de 200 plugins disponibles ?</string>
+  <string name="fun_fact_2">Saviez-vous qu\'Bugcord avec plus de 150 plugins fonctionne mieux que la nouvelle application de Discord ?</string>
+  <string name="fun_fact_3">Saviez-vous qu\'Bugcord possède plus de 200 plugins disponibles ?</string>
   <string name="fun_fact_4">je suis dans vos murs</string>
-  <string name="fun_fact_5">Saviez-vous que AliucordRN a créé Enmity et Vendetta ?</string>
+  <string name="fun_fact_5">Saviez-vous que BugcordRN a créé Enmity et Vendetta ?</string>
   <string name="fun_fact_6">Vous avez des problèmes ? Visitez le salon #support dans notre Discord !</string>
   <string name="fun_fact_7">Le plugin IWillCrashYourDiscord plante votre discord.</string>
-  <string name="fun_fact_9">Aliucord peut fonctionner sur WearOS</string>
-  <string name="fun_fact_10">Aliucord utilise la *réelle* ancienne interface utilisateur de mi-2022 !</string>
-  <string name="fun_fact_11">Il y a eu une tentative de faire fonctionner Aliucord sur iOS…</string>
+  <string name="fun_fact_9">Bugcord peut fonctionner sur WearOS</string>
+  <string name="fun_fact_10">Bugcord utilise la *réelle* ancienne interface utilisateur de mi-2022 !</string>
+  <string name="fun_fact_11">Il y a eu une tentative de faire fonctionner Bugcord sur iOS…</string>
   <string name="time_elapsed_seconds">%.2fs</string>
 </resources>

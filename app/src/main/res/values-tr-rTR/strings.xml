@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-  <string name="app_name">Aliucord Yöneticisi</string>
+  <string name="app_name">Bugcord Yöneticisi</string>
   <string name="app_description">Discord Android Uygulaması için bir mod</string>
   <string name="support_server">Destek Sunucusu</string>
   <string name="installer">Yükleyici</string>
@@ -34,7 +34,7 @@
   <string name="intent_import_component_success">%s başarıyla içe aktarıldı</string>
   <string name="intent_import_component_failure">Özel bileşen içe aktarılamadı!</string>
   <string name="permissions_title">İzinleri Ver</string>
-  <string name="permissions_subtitle">Aliucord Yöneticisinin şu izinlere ihtiyacı vardır:</string>
+  <string name="permissions_subtitle">Bugcord Yöneticisinin şu izinlere ihtiyacı vardır:</string>
   <string name="permissions_legend">%s gerekli izinleri gösterir!</string>
   <string name="permissions_grant">İzin ver</string>
   <string name="permissions_granted">İzin verildi</string>
@@ -43,7 +43,7 @@
   <string name="permissions_install_title">Bilinmeyen Kaynaklardan Yükle</string>
   <string name="permissions_install_desc">İndirmeyi başlatmak için izin gerekmektedir.</string>
   <string name="permissions_storage_title">Harici Depolama</string>
-  <string name="permissions_storage_desc">Aliucord ve Aliucord Yöneticisi paylaşılan verileri ~/Aliucord konumunda depoladığı için tüm dosyalara erişim iznine ihtiyaç duyar.</string>
+  <string name="permissions_storage_desc">Bugcord ve Bugcord Yöneticisi paylaşılan verileri ~/Bugcord konumunda depoladığı için tüm dosyalara erişim iznine ihtiyaç duyar.</string>
   <string name="permissions_notifs_title">Bildirimler</string>
   <string name="permissions_battery_title">Arka planda kullanım</string>
   <string name="permissions_battery_desc">Uygulama arka planda kaldığında kurulumun kendi kendine durmamasını sağlar.</string>
@@ -52,7 +52,7 @@
   <string name="permissions_shizuku_denied">Shizuku erişimi reddedildi</string>
   <string name="permissions_dhizuku_denied">Dhizuku erişimi reddedildi</string>
   <string name="installs_no_installs">Kurulum bulunamadı!</string>
-  <string name="launch_aliucord_fail">Aliucord başlatılamadı</string>
+  <string name="launch_bugcord_fail">Bugcord başlatılamadı</string>
   <string name="settings_header_advanced">Gelişmiş</string>
   <string name="settings_header_installation">Kurulum</string>
   <string name="settings_header_appearance">Görünüm</string>
@@ -91,7 +91,7 @@
   <string name="plugins_changelog_media">Güncelleme Geçmişi Medyası</string>
   <string name="plugins_error">Eklentiler işlenirken bir hata oluştu!</string>
   <string name="plugins_safe_mode_title">Güvenli mod</string>
-  <string name="plugins_safe_mode_desc">Aliucord\'u başlatırken geçici olarak tüm eklentileri devre dışı bırakır</string>
+  <string name="plugins_safe_mode_desc">Bugcord\'u başlatırken geçici olarak tüm eklentileri devre dışı bırakır</string>
   <string name="navigation_back">Geri</string>
   <string name="navigation_about">Hakkında</string>
   <string name="navigation_logs">Günlükler</string>
@@ -111,17 +111,17 @@
   <string name="version_load_fail">Sürüm alınamadı</string>
   <string name="installer_file_save_success">%s konumuna kaydedildi</string>
   <string name="installer_file_save_failed">%s Kaydedilemedi</string>
-  <string name="installer_install_success">Aliucord başarıyla indirildi</string>
-  <string name="installer_install_aborted">Aliucord kurulumu iptal edildi</string>
-  <string name="installer_uninstall_new">Devam etmek için şimdiki Aliucord sürümünüzü
+  <string name="installer_install_success">Bugcord başarıyla indirildi</string>
+  <string name="installer_install_aborted">Bugcord kurulumu iptal edildi</string>
+  <string name="installer_uninstall_new">Devam etmek için şimdiki Bugcord sürümünüzü
 lütfen silin!</string>
-  <string name="installer_uninstall_success">Aliucord başarıyla silindi</string>
+  <string name="installer_uninstall_success">Bugcord başarıyla silindi</string>
   <string name="installer_uninstall_aborted">Silme iptal edildi</string>
   <string name="installer_dl_verify_fail">İndirmeyi doğrulama başarısız</string>
   <string name="installer_insufficient_storage">Yetersiz depolama alanı!</string>
   <string name="installer_banner_minimization">Pil iyileştirmeleri kapatılmadığından dolayı bu ekranı küçültmek indirmeyi iptal edebilir!</string>
-  <string name="installer_banner_failure">İndirme başarısız! Yeniden deneyebilir ya da bu başlığa tıklayarak yardım için Aliucord sunucusunu açabilirsiniz.</string>
-  <string name="installer_banner_success">Aliucord başarıyla kuruldu! *SAKIN* Yönetici\'yi (bu uygulama) silmeyin, çünkü belirli güncellemeler için gereklidir.</string>
+  <string name="installer_banner_failure">İndirme başarısız! Yeniden deneyebilir ya da bu başlığa tıklayarak yardım için Bugcord sunucusunu açabilirsiniz.</string>
+  <string name="installer_banner_success">Bugcord başarıyla kuruldu! *SAKIN* Yönetici\'yi (bu uygulama) silmeyin, çünkü belirli güncellemeler için gereklidir.</string>
   <string name="install_error_unknown">İndirme başarısız (Sebep bilinmiyor)</string>
   <string name="install_error_unhandled_intent">%s için kullanılabilir işleyici yok!</string>
   <string name="install_error_blocked">Kurulum engellendi</string>
@@ -140,13 +140,13 @@ lütfen silin!</string>
   <string name="patch_step_dl_kt_apk">Discord APK\'sı indiriliyor</string>
   <string name="patch_step_dl_kotlin">Kotlin kütüphanesi indiriliyor</string>
   <string name="patch_step_dl_injector">Aşılayıcı indiriliyor</string>
-  <string name="patch_step_dl_aliuhook">Aliuhook kütüphanesi indiriliyor</string>
+  <string name="patch_step_dl_bugcordhook">Bugcordhook kütüphanesi indiriliyor</string>
   <string name="patch_step_dl_smali">Smali yamaları indiriliyor</string>
   <string name="patch_step_copy_deps">Bağımlılıklar kopyalanıyor</string>
   <string name="patch_step_patch_manifests">APK manifest dosyaları yamalanıyor</string>
   <string name="patch_step_patch_certs">Modern root sertifikaları ekleniyor</string>
   <string name="patch_step_patch_icon">Uygulama simgesi yamalanıyor</string>
-  <string name="patch_step_add_aliuhook">Aliuhook kitaplığı ekleniyor</string>
+  <string name="patch_step_add_bugcordhook">Bugcordhook kitaplığı ekleniyor</string>
   <string name="patch_step_patch_smali">Smali yamaları uygulanıyor</string>
   <string name="patch_step_reorganize_dex">APK\'ya .dex dosyaları ekleniyor</string>
   <string name="patch_step_save_metadata">Metaverileri depola</string>
@@ -162,7 +162,7 @@ lütfen silin!</string>
   <string name="installer_abort_title">Gerçekten çıkış yapmak istiyor musun?</string>
   <string name="installer_abort_body">Hala bitmemiş bir kurulumu iptal etmek istediğinize emin misiniz? Bozulmaların önlenmesi için önbelleğe alınmış dosyalar temizlenecektir.</string>
   <string name="updater_title">%s sürümüne güncelle</string>
-  <string name="updater_body">Aliucord Yöneticisi için yeni bir güncelleme yayınlandı! Düzgün çalışması için gerekli olabilir. Güncellemek ister misin?</string>
+  <string name="updater_body">Bugcord Yöneticisi için yeni bir güncelleme yayınlandı! Düzgün çalışması için gerekli olabilir. Güncellemek ister misin?</string>
   <string name="updater_open_github">Github\'ta görüntüle</string>
   <string name="updater_check_fail">Güncellemeler kontrol edilemedi!</string>
   <string name="updater_update_fail">Güncelleme başarısız! Lütfen güncellemeyi kendiniz elle indirip yükleyin!</string>
@@ -173,9 +173,9 @@ lütfen silin!</string>
   <string name="downloader_err_file_exists">Kurulum başarısız (Dosya mevcut)</string>
   <string name="downloader_err_storage_space">Kurulum başarısız (Yetersiz depolama)</string>
   <string name="home_network_fail">Veri alınamadı!</string>
-  <string name="patchopts_title">Aliucord kurulum sürecinde, indirildikten sonra bir daha değiştirilemeyecek birden fazla kişiselleştirme seçeneği sunar.</string>
+  <string name="patchopts_title">Bugcord kurulum sürecinde, indirildikten sonra bir daha değiştirilemeyecek birden fazla kişiselleştirme seçeneği sunar.</string>
   <string name="patchopts_pkgname_title">Paket Adı</string>
-  <string name="patchopts_pkgname_desc">Paket Adı tüm uygulamalar için özel bir tanımlayıcıdır. Farklı paket adı kullanmak, birden fazla kez Aliucord\'u indirmenize izin verebilir.</string>
+  <string name="patchopts_pkgname_desc">Paket Adı tüm uygulamalar için özel bir tanımlayıcıdır. Farklı paket adı kullanmak, birden fazla kez Bugcord\'u indirmenize izin verebilir.</string>
   <string name="patchopts_pkgname_invalid">Geçersiz paket adı!</string>
   <string name="patchopts_pkgname_taken">Hedefteki uygulamanın üstüne yazılacaktır!</string>
   <string name="patchopts_pkgname_ok">Geçerli paket adı!</string>
@@ -184,7 +184,7 @@ lütfen silin!</string>
   <string name="patchopts_debuggable_title">Hata ayıklanabilir</string>
   <string name="patchopts_debuggable_desc">Hata ayıklanabilir manifest flag\'ini etkinleştir. Bunu sadece ne yaptığınızı biliyorsanız kullanın!</string>
   <string name="patchopts_icon_title">Uygulama simgesini değiştir</string>
-  <string name="patchopts_icon_desc">Discord\'un simgesini Aliucord\'un simgesine değişir.</string>
+  <string name="patchopts_icon_desc">Discord\'un simgesini Bugcord\'un simgesine değişir.</string>
   <string name="patchopts_custom_injector_title">Özel Enjektör</string>
   <string name="patchopts_custom_injector_desc">Yönetici tarafından içe aktarılan özel bir enjektör yapısı.</string>
   <string name="patchopts_custom_patches_title">Özel Yamalar</string>
@@ -198,7 +198,7 @@ lütfen silin!</string>
   <string name="iconopts_variant_title_color">Özel Renk</string>
   <string name="iconopts_variant_title_image">Özel Resim</string>
   <string name="iconopts_variant_desc_discord">Orijinal simgeyi değiştirmez, sadece eksik olan tek renkli simgeyi APK\'ya ekler.</string>
-  <string name="iconopts_variant_desc_aliucord">Orijinal simge rengini Aliucord\'un simgesine değişir.</string>
+  <string name="iconopts_variant_desc_bugcord">Orijinal simge rengini Bugcord\'un simgesine değişir.</string>
   <string name="iconopts_variant_desc_color">Özel arka plan rengi seç.</string>
   <string name="iconopts_variant_desc_image">Özel bir resim seçin. Aklınıza not edin; resmin Adaptif Simge ön plan kurallarına uyumlu boşluğa ihtiyacı vardır. Resim boyut sınırı 256KiB.</string>
   <string name="iconopts_colorpicker_title">Renk Tonu ve Doygunluk</string>
@@ -236,9 +236,9 @@ lütfen silin!</string>
   <string name="logs_wipe_desc">Kalıcı olarak tüm kayıtları silmek istedğinize emin misiniz?</string>
   <string name="notif_group_install_title">Etkin kurulum</string>
   <string name="notif_group_install_desc">Küçültülmüş indirme sürecinde gönderilen seyir bildirimleri</string>
-  <string name="notif_install_ready_title">Aliucord kurulumu hazır!</string>
+  <string name="notif_install_ready_title">Bugcord kurulumu hazır!</string>
   <string name="notif_install_ready_desc">Kurmak için tıklayınız</string>
-  <string name="notif_install_fail_title">Aliucord indiremedi</string>
+  <string name="notif_install_fail_title">Bugcord indiremedi</string>
   <string name="notif_install_fail_desc">Daha fazla bilgi için tıklayınız</string>
   <string name="play_protect_warning_title">Play Protect</string>
   <string name="play_protect_warning_desc">Google Play Protect cihazınızda etkin görünmekte. Yeni bir indirmeyi, özel bir imza anahtarının kullanımından dolayı, engelleyebilir. Play Protect ayarlarında bunu kapatabilirsiniz. Eğer bir uyarı menüsü gösterirse, \"Daha fazla bilgi\"ye, sonra da \"Yine de indir\"e tıklayın</string>
@@ -247,14 +247,14 @@ lütfen silin!</string>
   <string name="play_protect_warning_disable">Bunu tekrar gösterme</string>
   <string name="fun_fact_prefix">İlginç Bilgi: %s</string>
   <string name="fun_fact_1">Google Play Protect\'in işe yaramaz olduğunu biliyor muydunuz?</string>
-  <string name="fun_fact_2">Aliucord\'un 150\'den fazla eklentiyle bile Discord\'un yeni uygulamasından daha hızlı yürüdüğünü biliyor muydunuz?</string>
-  <string name="fun_fact_3">Aliucord\'un 200\'den fazla eklentiye sahip olduğunu biliyor muydunuz?</string>
+  <string name="fun_fact_2">Bugcord\'un 150\'den fazla eklentiyle bile Discord\'un yeni uygulamasından daha hızlı yürüdüğünü biliyor muydunuz?</string>
+  <string name="fun_fact_3">Bugcord\'un 200\'den fazla eklentiye sahip olduğunu biliyor muydunuz?</string>
   <string name="fun_fact_4">duvarlarının içinde sürünüyorum</string>
-  <string name="fun_fact_5">AliucordRN\'in Enmity ve Vendetta\'yı ortaya çıkardığını biliyor muydunuz?</string>
+  <string name="fun_fact_5">BugcordRN\'in Enmity ve Vendetta\'yı ortaya çıkardığını biliyor muydunuz?</string>
   <string name="fun_fact_6">Bir sorununuz mu var? Discord sunucumuzda #support kanalını ziyaret edin!</string>
   <string name="fun_fact_7">IWillCrashYourDiscord eklentisi Discord\'unuzu çökertir.</string>
-  <string name="fun_fact_9">Aliucord WearOS\'te çalışabilir</string>
-  <string name="fun_fact_10">Aliucord *gerçek* eski arayüzü kullanıyor; 2022\'nin ortalarından kalanı!</string>
-  <string name="fun_fact_11">Aliucord\'u iOS\'te çalıştırmak için bir deneme vardı…</string>
+  <string name="fun_fact_9">Bugcord WearOS\'te çalışabilir</string>
+  <string name="fun_fact_10">Bugcord *gerçek* eski arayüzü kullanıyor; 2022\'nin ortalarından kalanı!</string>
+  <string name="fun_fact_11">Bugcord\'u iOS\'te çalıştırmak için bir deneme vardı…</string>
   <string name="time_elapsed_seconds">%.2fsn</string>
 </resources>

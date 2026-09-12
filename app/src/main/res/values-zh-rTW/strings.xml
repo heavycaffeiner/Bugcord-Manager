@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-  <string name="app_name">Aliucord Manager</string>
+  <string name="app_name">Bugcord Manager</string>
   <string name="app_description">一個專為 Android 客製化的 Discord 應用程式</string>
   <string name="support_server">支持伺服器</string>
   <string name="installer">安裝程式</string>
@@ -15,7 +15,7 @@
   <string name="action_install">安裝</string>
   <string name="action_uninstall">解除安裝</string>
   <string name="action_add_install">新增安裝</string>
-  <string name="action_update_install">Update Aliucord Installation</string>
+  <string name="action_update_install">Update Bugcord Installation</string>
   <string name="action_update">更新</string>
   <string name="action_clear">清除</string>
   <string name="action_delete">Delete</string>
@@ -34,7 +34,7 @@
   <string name="intent_import_component_success">Successfully imported %s</string>
   <string name="intent_import_component_failure">Failed to import custom component!</string>
   <string name="permissions_title">Grant Permissions</string>
-  <string name="permissions_subtitle">Aliucord Manager requires permissions:</string>
+  <string name="permissions_subtitle">Bugcord Manager requires permissions:</string>
   <string name="permissions_legend">%s indicates required permissions!</string>
   <string name="permissions_grant">Grant</string>
   <string name="permissions_granted">Granted</string>
@@ -43,16 +43,16 @@
   <string name="permissions_install_title">Install from Unknown Sources</string>
   <string name="permissions_install_desc">Permissions are required to initiate an installation from this app.</string>
   <string name="permissions_storage_title">External Storage</string>
-  <string name="permissions_storage_desc">Aliucord and Manager stores shared data in ~/Aliucord, which requires full storage permissions. Scoped storage is not currently supported.</string>
+  <string name="permissions_storage_desc">Bugcord and Manager stores shared data in ~/Bugcord, which requires full storage permissions. Scoped storage is not currently supported.</string>
   <string name="permissions_notifs_title">Notifications</string>
   <string name="permissions_battery_title">Background Battery</string>
   <string name="permissions_battery_desc">Ensures the installation process does not get automatically cancelled if the app is minimized.</string>
-  <string name="permissions_notifs_desc">Used only to show the download progress if Aliucord Manager is minimized during installation.</string>
+  <string name="permissions_notifs_desc">Used only to show the download progress if Bugcord Manager is minimized during installation.</string>
   <string name="permissions_root_denied">Failed to obtain root permissions</string>
   <string name="permissions_shizuku_denied">Failed to obtain Shizuku permissions</string>
   <string name="permissions_dhizuku_denied">Failed to obtain Dhizuku permissions</string>
   <string name="installs_no_installs">No installations founds!</string>
-  <string name="launch_aliucord_fail">Aliucord 啟動失敗</string>
+  <string name="launch_bugcord_fail">Bugcord 啟動失敗</string>
   <string name="settings_header_advanced">進階</string>
   <string name="settings_header_installation">Installation</string>
   <string name="settings_header_appearance">外觀</string>
@@ -91,7 +91,7 @@
   <string name="plugins_changelog_media">更新記錄檔媒體</string>
   <string name="plugins_error">處理插件時發生錯誤！</string>
   <string name="plugins_safe_mode_title">Safe mode</string>
-  <string name="plugins_safe_mode_desc">Temporarily disables all plugins when starting Aliucord</string>
+  <string name="plugins_safe_mode_desc">Temporarily disables all plugins when starting Bugcord</string>
   <string name="navigation_back">返回</string>
   <string name="navigation_about">關於</string>
   <string name="navigation_logs">Logs</string>
@@ -111,16 +111,16 @@
   <string name="version_load_fail">獲得版本失敗</string>
   <string name="installer_file_save_success">儲存到 %s</string>
   <string name="installer_file_save_failed">儲存到 %s 失敗</string>
-  <string name="installer_install_success">成功地安裝 Aliucord</string>
-  <string name="installer_install_aborted">中斷 Aliucord 安裝</string>
-  <string name="installer_uninstall_new">請解除安裝目前版本的 Aliucord 以繼續！</string>
-  <string name="installer_uninstall_success">成功地解除安裝 Aliucord</string>
-  <string name="installer_uninstall_aborted">已取消 Aliucord 解除安裝</string>
+  <string name="installer_install_success">成功地安裝 Bugcord</string>
+  <string name="installer_install_aborted">中斷 Bugcord 安裝</string>
+  <string name="installer_uninstall_new">請解除安裝目前版本的 Bugcord 以繼續！</string>
+  <string name="installer_uninstall_success">成功地解除安裝 Bugcord</string>
+  <string name="installer_uninstall_aborted">已取消 Bugcord 解除安裝</string>
   <string name="installer_dl_verify_fail">無法驗證下載</string>
   <string name="installer_insufficient_storage">儲存空間不足！</string>
   <string name="installer_banner_minimization">Since battery optimizations have not been disabled, minimizing this screen may abort the installation process!</string>
-  <string name="installer_banner_failure">Installation failed! You can either retry or click this banner to open the Aliucord server for help.</string>
-  <string name="installer_banner_success">Successfully installed Aliucord! Do *NOT* uninstall the manager (this app) as it is required to perform certain types of updates.</string>
+  <string name="installer_banner_failure">Installation failed! You can either retry or click this banner to open the Bugcord server for help.</string>
+  <string name="installer_banner_success">Successfully installed Bugcord! Do *NOT* uninstall the manager (this app) as it is required to perform certain types of updates.</string>
   <string name="install_error_unknown">安裝失敗（未知的原因）</string>
   <string name="install_error_unhandled_intent">No handlers available for %s!</string>
   <string name="install_error_blocked">安裝已被阻止</string>
@@ -139,13 +139,13 @@
   <string name="patch_step_dl_kt_apk">正在下載 Discord APK</string>
   <string name="patch_step_dl_kotlin">正在下載 Kotlin library</string>
   <string name="patch_step_dl_injector">正在下載 injector</string>
-  <string name="patch_step_dl_aliuhook">正在下載 Aliuhook library</string>
+  <string name="patch_step_dl_bugcordhook">正在下載 Bugcordhook library</string>
   <string name="patch_step_dl_smali">Downloading smali patches</string>
   <string name="patch_step_copy_deps">Copying dependencies</string>
   <string name="patch_step_patch_manifests">正在安裝 apk 清單補丁</string>
   <string name="patch_step_patch_certs">Adding modern root certificates</string>
   <string name="patch_step_patch_icon">正在安裝應用程式圖示補丁</string>
-  <string name="patch_step_add_aliuhook">Adding Aliuhook library</string>
+  <string name="patch_step_add_bugcordhook">Adding Bugcordhook library</string>
   <string name="patch_step_patch_smali">Applying smali patches</string>
   <string name="patch_step_reorganize_dex">Adding .dex files to APK</string>
   <string name="patch_step_save_metadata">儲存詮釋資料</string>
@@ -161,7 +161,7 @@
   <string name="installer_abort_title">確定離開？</string>
   <string name="installer_abort_body">Are you sure you really want to abort an in-progress installation? Cached files will be cleared to avoid corruption.</string>
   <string name="updater_title">更新到 v%s</string>
-  <string name="updater_body">Aliucord Manager 已發布新更新！Aliucord Manager 可能需要它才能正常運行。您想更新嗎？</string>
+  <string name="updater_body">Bugcord Manager 已發布新更新！Bugcord Manager 可能需要它才能正常運行。您想更新嗎？</string>
   <string name="updater_open_github">View release on GitHub</string>
   <string name="updater_check_fail">Failed to check for updates!</string>
   <string name="updater_update_fail">Failed to update! Please download and install the update manually!</string>
@@ -172,9 +172,9 @@
   <string name="downloader_err_file_exists">無法下載（已存在檔案）</string>
   <string name="downloader_err_storage_space">無法下載（儲存空間不足）</string>
   <string name="home_network_fail">無法取得數據！</string>
-  <string name="patchopts_title">Aliucord provides several customizations at installation time that are not able to be changed once installed.</string>
+  <string name="patchopts_title">Bugcord provides several customizations at installation time that are not able to be changed once installed.</string>
   <string name="patchopts_pkgname_title">套件名稱</string>
-  <string name="patchopts_pkgname_desc">The package name is a unique identifier for all apps. Using different ones can allow for multiple installations of Aliucord.</string>
+  <string name="patchopts_pkgname_desc">The package name is a unique identifier for all apps. Using different ones can allow for multiple installations of Bugcord.</string>
   <string name="patchopts_pkgname_invalid">無效的套件名稱！</string>
   <string name="patchopts_pkgname_taken">目標應用程式將被覆寫！</string>
   <string name="patchopts_pkgname_ok">有效的封包名稱！</string>
@@ -183,7 +183,7 @@
   <string name="patchopts_debuggable_title">可偵錯</string>
   <string name="patchopts_debuggable_desc">Enable the debuggable manifest flag. Only use this if you know what you are doing!</string>
   <string name="patchopts_icon_title">更換應用程示圖示</string>
-  <string name="patchopts_icon_desc">Changes the app\'s icon to use Aliucord branding instead of Discord\'s own.</string>
+  <string name="patchopts_icon_desc">Changes the app\'s icon to use Bugcord branding instead of Discord\'s own.</string>
   <string name="patchopts_custom_injector_title">Custom Injector</string>
   <string name="patchopts_custom_injector_desc">A custom injector build that was imported by Manager.</string>
   <string name="patchopts_custom_patches_title">Custom Patches</string>
@@ -197,7 +197,7 @@
   <string name="iconopts_variant_title_color">自訂顏色</string>
   <string name="iconopts_variant_title_image">自訂圖片</string>
   <string name="iconopts_variant_desc_discord">Does not alter the original icon, instead only adding the missing monochrome icon to the APK.</string>
-  <string name="iconopts_variant_desc_aliucord">Changes the original icon color to Aliucord\'s branding.</string>
+  <string name="iconopts_variant_desc_bugcord">Changes the original icon color to Bugcord\'s branding.</string>
   <string name="iconopts_variant_desc_color">Select a custom icon background color.</string>
   <string name="iconopts_variant_desc_image">Select a custom replacement image. Note that the image must have sufficient padding as per the Adaptive Icon foreground guidelines. Maximum image size is 256KiB.</string>
   <string name="iconopts_colorpicker_title">Hue &amp; Saturation</string>
@@ -235,9 +235,9 @@
   <string name="logs_wipe_desc">您確定要永久刪除所有日誌嗎？</string>
   <string name="notif_group_install_title">主動安裝</string>
   <string name="notif_group_install_desc">Progress notifications sent during a minimized installation</string>
-  <string name="notif_install_ready_title">已安裝 Aliucord！</string>
+  <string name="notif_install_ready_title">已安裝 Bugcord！</string>
   <string name="notif_install_ready_desc">點擊安裝……</string>
-  <string name="notif_install_fail_title">無法安裝 Aliucord</string>
+  <string name="notif_install_fail_title">無法安裝 Bugcord</string>
   <string name="notif_install_fail_desc">點擊檢視更多資訊……</string>
   <string name="play_protect_warning_title">Play Protect</string>
   <string name="play_protect_warning_desc">Google Play Protect appears to be enabled on your device. It may attempt to interfere with a new installation due to the usage of a unique signing key. You can disable it in Play Protect\'s settings.\n\nIf it does show a warning dialog, press\n\"More Details\" -&gt; \"Install anyway\"</string>
@@ -246,14 +246,14 @@
   <string name="play_protect_warning_disable">不再顯示</string>
   <string name="fun_fact_prefix">冷知識：%s</string>
   <string name="fun_fact_1">你知道 Google Play Protect 根本毫無用處嗎？</string>
-  <string name="fun_fact_2">你知道安裝了超過 150 個插件的 Aliucord 依舊比新的原生 Discord 應用程式還快嗎？</string>
-  <string name="fun_fact_3">你知道 Aliucord 已有超過 200 個插件可供安裝嗎？</string>
+  <string name="fun_fact_2">你知道安裝了超過 150 個插件的 Bugcord 依舊比新的原生 Discord 應用程式還快嗎？</string>
+  <string name="fun_fact_3">你知道 Bugcord 已有超過 200 個插件可供安裝嗎？</string>
   <string name="fun_fact_4">我在你家牆裡面</string>
-  <string name="fun_fact_5">Did you know AliucordRN spawned Enmity and Vendetta?</string>
+  <string name="fun_fact_5">Did you know BugcordRN spawned Enmity and Vendetta?</string>
   <string name="fun_fact_6">Having issues? Visit the #support channel in our Discord!</string>
   <string name="fun_fact_7">The IWillCrashYourDiscord plugin crashes your discord.</string>
-  <string name="fun_fact_9">Aliucord 可在 WearOS 上運作</string>
-  <string name="fun_fact_10">Aliucord uses the *real* old UI, from mid-2022!</string>
-  <string name="fun_fact_11">There was an attempt to make Aliucord run on iOS…</string>
+  <string name="fun_fact_9">Bugcord 可在 WearOS 上運作</string>
+  <string name="fun_fact_10">Bugcord uses the *real* old UI, from mid-2022!</string>
+  <string name="fun_fact_11">There was an attempt to make Bugcord run on iOS…</string>
   <string name="time_elapsed_seconds">%.2fs</string>
 </resources>

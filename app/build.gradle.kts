@@ -22,7 +22,7 @@ val gitHasLocalCommits = gitCurrentBranch?.let { branch ->
 val gitHasHasLocalChanges = providers.execIgnoreCode("git", "status", "-s").isNotEmpty()
 
 android {
-    namespace = "com.aliucord.manager"
+    namespace = "com.bugcord.manager"
     compileSdk = 36
 
     defaultConfig {
@@ -35,10 +35,11 @@ android {
             useSupportLibrary = true
         }
 
-        buildConfigField("String", "TAG", "\"AliucordManager\"")
+        buildConfigField("String", "TAG", "\"BugcordManager\"")
         buildConfigField("String", "SUPPORT_SERVER", "\"EsNDvBaHVU\"")
 
-        buildConfigField("String", "BACKEND_URL", "\"https://aliucord.com\"")
+        // Artifact host of the upstream project this fork is based on. Holds the Discord
+        // APKs and the build plugin; it is the only public source of those binaries.
         buildConfigField("String", "MAVEN_URL", "\"https://maven.aliucord.com/releases\"")
 
         buildConfigField("Boolean", "RELEASE", isRelease.toString())
