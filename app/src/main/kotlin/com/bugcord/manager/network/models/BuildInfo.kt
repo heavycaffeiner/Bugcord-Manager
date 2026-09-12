@@ -29,4 +29,6 @@ data class BuildInfo(
     val patchesVersion: SemVer,
     @SerialName("kotlinVersion")
     val kotlinVersion: SemVer,
+    @SerialName("voiceVersion")
+    val voiceVersion: SemVer,
 )

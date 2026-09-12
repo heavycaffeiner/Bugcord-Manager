@@ -38,8 +38,10 @@ class FetchInfoStep : Step(), KoinComponent {
 
     /**
      * Version of the BugcordVoice library published to the core repository's builds branch.
+     * Bumped by the core build, so a stale cached AAR cannot outlive its version.
      */
-    val bugcordvoiceVersion: SemVer = SemVer(1, 0, 0)
+    lateinit var bugcordvoiceVersion: SemVer
+        private set
 
     /**
      * Discord build whose libdiscord.so is used as the voice engine.
@@ -54,5 +56,8 @@ class FetchInfoStep : Step(), KoinComponent {
         container.log("Obtaining latest bugcordhook version")
         bugcordhookVersion = hook.getBugcordhookVersion(force = true).getOrThrow()
         container.log("Fetched bugcordhook version: $bugcordhookVersion")
+
+        bugcordvoiceVersion = data.voiceVersion
+        container.log("Fetched bugcordvoice version: $bugcordvoiceVersion")
     }
 }
