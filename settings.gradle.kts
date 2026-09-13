@@ -13,7 +13,8 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        // Holds the libraries built from the Bugcord-* forks.
+        // Holds the libraries built from the Bugcord-* forks, fetched by the build workflow.
+        maven { url = uri("local-repo") }
         mavenLocal()
     }
 }
