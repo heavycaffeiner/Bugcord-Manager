@@ -40,8 +40,8 @@ class BugcordGithubService(
     }
 
     companion object {
-        const val ORG = "Bugcord"
-        const val MANAGER_REPO = "Manager"
+        const val ORG = "heavycaffeiner"
+        const val MANAGER_REPO = "Bugcord-Manager"
 
         const val DATA_JSON_URL = "https://raw.githubusercontent.com/heavycaffeiner/Bugcord/builds/data.json"
 
