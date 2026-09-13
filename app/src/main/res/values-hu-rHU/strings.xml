@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-  <string name="app_name">Bugcord Manager</string>
   <string name="app_description">Egy mod a Discord Android alkalmazáshoz</string>
   <string name="support_server">Támogatói Szerver</string>
   <string name="installer">Telepítő</string>

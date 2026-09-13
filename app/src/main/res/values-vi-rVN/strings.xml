@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-  <string name="app_name">Trình quản lý Bugcord</string>
   <string name="app_description">Một bản mod cho Ứng dụng Android Discord</string>
   <string name="support_server">Máy chủ Hỗ trợ</string>
   <string name="installer">Trình cài đặt</string>

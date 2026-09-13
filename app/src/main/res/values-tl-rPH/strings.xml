@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-  <string name="app_name">Bugcord Manager</string>
   <string name="app_description">Mod para sa Discord Android App</string>
   <string name="support_server">Server ng Suporta</string>
   <string name="installer">Taga-install</string>
