@@ -11,7 +11,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 /**
- * Remote Bugcord build data available at https://raw.githubusercontent.com/heavycaffeiner/Bugcord/builds/data.json
+ * Remote Bugcord build data available at https://raw.githubusercontent.com/thirdscam/Bugcord/builds/data.json
  * This is used to determine the latest available versions of components.
  */
 @Serializable

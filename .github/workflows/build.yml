@@ -33,7 +33,7 @@ jobs:
             curl -fsSL --retry 3 -o "$2" "$1"
           }
 
-          repo="https://github.com/heavycaffeiner"
+          repo="https://github.com/thirdscam"
           fetch "$repo/Bugcord-axml/releases/download/1.0.1/axml-1.0.1.jar" \
             local-repo/com/bugcord/axml/1.0.1/axml-1.0.1.jar
           fetch "$repo/Bugcord-axml/releases/download/1.0.1/axml-1.0.1.pom" \

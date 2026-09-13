@@ -57,6 +57,6 @@ class DownloadInjectorStep(
     }
 
     private companion object {
-        const val URL = "https://raw.githubusercontent.com/heavycaffeiner/Bugcord/builds/Injector.dex"
+        const val URL = "https://raw.githubusercontent.com/thirdscam/Bugcord/builds/Injector.dex"
     }
 }

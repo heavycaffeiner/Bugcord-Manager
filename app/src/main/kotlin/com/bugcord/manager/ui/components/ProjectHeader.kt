@@ -48,7 +48,7 @@ fun ProjectHeader(modifier: Modifier = Modifier) {
         Row(
             horizontalArrangement = Arrangement.Center,
         ) {
-            TextButton(onClick = { uriHandler.openUri("https://github.com/heavycaffeiner/Bugcord") }) {
+            TextButton(onClick = { uriHandler.openUri("https://github.com/thirdscam/Bugcord") }) {
                 Icon(
                     painter = painterResource(R.drawable.ic_account_github_white_24dp),
                     contentDescription = null,

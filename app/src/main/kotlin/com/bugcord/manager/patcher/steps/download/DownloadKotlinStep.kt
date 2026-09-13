@@ -36,6 +36,6 @@ class DownloadKotlinStep : DownloadStep<SemVer>(), IDexProvider, KoinComponent {
         listOf(getStoredFile(container).readBytes())
 
     private companion object {
-        const val URL = "https://raw.githubusercontent.com/heavycaffeiner/Bugcord/builds/kotlin.dex"
+        const val URL = "https://raw.githubusercontent.com/thirdscam/Bugcord/builds/kotlin.dex"
     }
 }

@@ -4,11 +4,11 @@
     <p>The new method to install Bugcord, in a user-friendly way.</p>
 
 [![Discord](https://img.shields.io/discord/811255666990907402?logo=discord&logoColor=white&style=for-the-badge&color=5865F2)](https://discord.gg/EsNDvBaHVU)
-[![GitHub Stars](https://img.shields.io/github/stars/heavycaffeiner/Bugcord-Manager?logo=github&style=for-the-badge&color=ffd663)](https://github.com/heavycaffeiner/Bugcord-Manager/stargazers)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/heavycaffeiner/Bugcord-Manager/build.yml?label=Build&logo=github&style=for-the-badge&branch=main)](https://nightly.link/heavycaffeiner/Bugcord-Manager/workflows/build/main/app.zip)
-![GitHub Downloads](https://img.shields.io/github/downloads/heavycaffeiner/Bugcord-Manager/total?style=for-the-badge&logo=github)
-![Code Size](https://img.shields.io/github/languages/code-size/heavycaffeiner/Bugcord-Manager?style=for-the-badge)
-[![GitHub License](https://img.shields.io/github/license/heavycaffeiner/Bugcord-Manager?style=for-the-badge&color=007ec6)](https://github.com/heavycaffeiner/Bugcord-Manager/blob/main/LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/thirdscam/Bugcord-Manager?logo=github&style=for-the-badge&color=ffd663)](https://github.com/thirdscam/Bugcord-Manager/stargazers)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/thirdscam/Bugcord-Manager/build.yml?label=Build&logo=github&style=for-the-badge&branch=main)](https://nightly.link/thirdscam/Bugcord-Manager/workflows/build/main/app.zip)
+![GitHub Downloads](https://img.shields.io/github/downloads/thirdscam/Bugcord-Manager/total?style=for-the-badge&logo=github)
+![Code Size](https://img.shields.io/github/languages/code-size/thirdscam/Bugcord-Manager?style=for-the-badge)
+[![GitHub License](https://img.shields.io/github/license/thirdscam/Bugcord-Manager?style=for-the-badge&color=007ec6)](https://github.com/thirdscam/Bugcord-Manager/blob/main/LICENSE)
 
 </div>
 
@@ -24,7 +24,7 @@ legacy installer. It is deprecated and does not work anymore.
 
 ## Installation
 
-1. Download the [latest release APK](https://github.com/heavycaffeiner/Bugcord-Manager/releases/latest)
+1. Download the [latest release APK](https://github.com/thirdscam/Bugcord-Manager/releases/latest)
 2. Open and install Bugcord Manager
     - If you have not enabled "Install from unknown sources" for your browser via system settings, do so now.
 3. Open Bugcord Manager
@@ -40,7 +40,7 @@ legacy installer. It is deprecated and does not work anymore.
 7. Click "Launch" or directly launch the newly installed Bugcord app
 8. Grant the permission requests
 9. Sign in to Discord
-10. Install plugins by following these [instructions](https://github.com/heavycaffeiner/Bugcord#-plugin-installation)
+10. Install plugins by following these [instructions](https://github.com/thirdscam/Bugcord#-plugin-installation)
 
 ## Building
 
@@ -49,7 +49,7 @@ legacy installer. It is deprecated and does not work anymore.
     - [JDK 21+](https://adoptium.net/temurin/releases/?os=any&arch=any&version=21)
 2. Clone the repo:
    ```shell
-   git clone https://github.com/heavycaffeiner/Bugcord-Manager && cd Manager
+   git clone https://github.com/thirdscam/Bugcord-Manager && cd Manager
    ```
 3. Build the project:
    #### Linux/macOS

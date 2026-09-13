@@ -352,7 +352,7 @@ private fun CustomImageOptions(
         MainActionButton(
             text = stringResource(R.string.iconopts_btn_open_example_image),
             icon = painterResource(R.drawable.ic_launch),
-            onClick = { uriHandler.openUri("https://github.com/heavycaffeiner/Bugcord/blob/main/installer/android/app/src/main/assets/icon1.png") },
+            onClick = { uriHandler.openUri("https://github.com/thirdscam/Bugcord/blob/main/installer/android/app/src/main/assets/icon1.png") },
             colors = IconButtonDefaults.filledTonalIconButtonColors(
                 containerColor = MaterialTheme.colorScheme.surfaceContainerHighest,
             ),

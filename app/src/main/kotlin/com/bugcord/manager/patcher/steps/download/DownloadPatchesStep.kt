@@ -51,6 +51,6 @@ class DownloadPatchesStep(
     }
 
     private companion object {
-        const val URL = "https://raw.githubusercontent.com/heavycaffeiner/Bugcord/builds/patches.zip"
+        const val URL = "https://raw.githubusercontent.com/thirdscam/Bugcord/builds/patches.zip"
     }
 }

@@ -36,7 +36,7 @@ class BugcordhookService(private val http: HttpService) {
     fun getBugcordvoiceUrl(): String = VOICE_URL
 
     private companion object {
-        const val ORG = "heavycaffeiner"
+        const val ORG = "thirdscam"
         const val HOOK_REPO = "Bugcord-Hook"
         const val AAR_NAME = "Bugcordhook.aar"
         const val VOICE_URL =

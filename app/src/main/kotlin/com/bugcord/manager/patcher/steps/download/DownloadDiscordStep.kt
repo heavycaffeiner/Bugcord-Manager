@@ -108,7 +108,7 @@ class DownloadDiscordStep : DownloadStep<Int>(), KoinComponent {
     private companion object {
         const val DISCORD_KT_VERSION = 126021
         const val DISCORD_CERTIFICATE_SHA256 = "3c39d23cf9367849a5c699395647fe0e5bfea5a1f1f40d8c717ddc70f8bfa113"
-        const val PRIMARY_URL = "https://github.com/heavycaffeiner/Bugcord-Maven/releases/download/126021/base.apk"
+        const val PRIMARY_URL = "https://github.com/thirdscam/Bugcord-Maven/releases/download/126021/base.apk"
         const val FALLBACK_URL = "https://maven.aliucord.com/releases/com/discord/discord/126021/discord-126021.apk"
     }
 
