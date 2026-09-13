@@ -9,7 +9,7 @@ import com.bugcord.manager.patcher.StepRunner
 import com.bugcord.manager.patcher.steps.base.DownloadStep
 import com.bugcord.manager.patcher.steps.base.IDexProvider
 import com.bugcord.manager.patcher.steps.patch.ReorganizeDexStep
-import com.bugcord.manager.patcher.steps.patch.ReplaceLibdiscordStep
+import com.bugcord.manager.patcher.steps.patch.ReplaceVoiceEngineStep
 import com.bugcord.manager.patcher.steps.prepare.FetchInfoStep
 import com.github.diamondminer88.zip.ZipReader
 import org.koin.core.component.KoinComponent
@@ -18,7 +18,7 @@ import org.koin.core.component.inject
 /**
  * Download a packaged AAR of the latest BugcordVoice build.
  * The AAR carries the prebuilt webrtc.dex (org.webrtc). libdiscord.so is sourced
- * separately by [ReplaceLibdiscordStep] from the Discord split APK.
+ * separately by [ReplaceVoiceEngineStep] from the Discord APK the user supplies.
  * Provides [ReorganizeDexStep] with the dex through the [IDexProvider] implementation.
  */
 @Stable

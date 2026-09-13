@@ -38,10 +38,6 @@ android {
         buildConfigField("String", "TAG", "\"BugcordManager\"")
         buildConfigField("String", "SUPPORT_SERVER", "\"EsNDvBaHVU\"")
 
-        // Artifact host of the upstream project this fork is based on. Holds the Discord
-        // APKs and the build plugin; it is the only public source of those binaries.
-        buildConfigField("String", "MAVEN_URL", "\"https://maven.aliucord.com/releases\"")
-
         buildConfigField("Boolean", "RELEASE", isRelease.toString())
         buildConfigField("String", "GIT_BRANCH", "\"$gitCurrentBranch\"")
         buildConfigField("String", "GIT_COMMIT", "\"$gitLatestCommit\"")

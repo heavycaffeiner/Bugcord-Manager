@@ -1,6 +1,8 @@
 package com.bugcord.manager.ui.screens.patchopts
 
 import android.os.Parcelable
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.*
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
@@ -12,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
@@ -34,6 +37,10 @@ import com.bugcord.manager.util.showToast
 import kotlinx.parcelize.IgnoredOnParcel
 import kotlinx.parcelize.Parcelize
 import org.koin.core.parameter.parametersOf
+import java.io.File
+
+/** Discord downloads on APKMirror, the only source of the APKs this app patches. */
+private const val APKMIRROR_DISCORD_URL = "https://www.apkmirror.com/apk/discord/discord-chat-for-gamers/"
 
 @Parcelize
 class PatchOptionsScreen(
@@ -46,8 +53,16 @@ class PatchOptionsScreen(
     override fun Content() {
         val context = LocalContext.current
         val navigator = LocalNavigator.currentOrThrow
+        val uriHandler = LocalUriHandler.current
         val model = koinScreenModel<PatchOptionsModel> { parametersOf(prefilledOptions ?: PatchOptions.Default) }
         val iconModel = koinScreenModel<IconOptionsModel> { parametersOf((prefilledOptions ?: PatchOptions.Default).iconReplacement) }
+
+        val apkPicker = rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
+            uri?.let(model::importSourceApk)
+        }
+        val enginePicker = rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
+            uri?.let(model::importVoiceEngine)
+        }
 
         PatchOptionsScreenContent(
             isUpdate = prefilledOptions != null,
@@ -79,6 +94,12 @@ class PatchOptionsScreen(
             customPatches = model.customPatches,
             onSelectCustomInjector = { model.selectCustomInjector(navigator) },
             onSelectCustomPatches = { model.selectCustomPatches(navigator) },
+
+            sourceApkPath = model.sourceApkPath,
+            onPickSourceApk = { apkPicker.launch(arrayOf("*/*")) },
+            voiceEnginePath = model.voiceEnginePath,
+            onPickVoiceEngine = { enginePicker.launch(arrayOf("*/*")) },
+            onOpenApkMirror = { uriHandler.openUri(APKMIRROR_DISCORD_URL) },
 
             isConfigValid = model.isConfigValid,
             onInstall = onInstall@{
@@ -121,6 +142,12 @@ fun PatchOptionsScreenContent(
     customPatches: PatchComponent?,
     onSelectCustomPatches: () -> Unit,
 
+    sourceApkPath: String?,
+    onPickSourceApk: () -> Unit,
+    voiceEnginePath: String?,
+    onPickVoiceEngine: () -> Unit,
+    onOpenApkMirror: () -> Unit,
+
     isConfigValid: Boolean,
     onInstall: () -> Unit,
 ) {
@@ -143,6 +170,35 @@ fun PatchOptionsScreenContent(
             )
 
             TextDivider(text = stringResource(R.string.patchopts_divider_basic))
+
+            IconPatchOption(
+                icon = painterResource(R.drawable.ic_extension),
+                name = stringResource(R.string.patchopts_source_apk_title),
+                description = stringResource(R.string.patchopts_source_apk_desc),
+            ) {
+                FilledTonalButton(onClick = onPickSourceApk) {
+                    Text(
+                        text = sourceApkPath?.let { File(it).name }
+                            ?: stringResource(R.string.patchopts_source_apk_none)
+                    )
+                }
+                TextButton(onClick = onOpenApkMirror, modifier = Modifier.padding(start = 8.dp)) {
+                    Text(stringResource(R.string.patchopts_apkmirror))
+                }
+            }
+
+            IconPatchOption(
+                icon = painterResource(R.drawable.ic_extension),
+                name = stringResource(R.string.patchopts_voice_engine_title),
+                description = stringResource(R.string.patchopts_voice_engine_desc),
+            ) {
+                FilledTonalButton(onClick = onPickVoiceEngine) {
+                    Text(
+                        text = voiceEnginePath?.let { File(it).name }
+                            ?: stringResource(R.string.patchopts_source_apk_none)
+                    )
+                }
+            }
 
             IconPatchOption(
                 icon = painterResource(R.drawable.ic_app_shortcut),

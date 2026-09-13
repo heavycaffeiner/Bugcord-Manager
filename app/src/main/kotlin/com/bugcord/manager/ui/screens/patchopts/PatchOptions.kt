@@ -44,6 +44,16 @@ data class PatchOptions(
      * A custom smali patches bundle that was used rather than the latest.
      */
     val customPatches: PatchComponent? = null,
+
+    /**
+     * Discord APK the user supplied to patch, copied into app storage.
+     */
+    val sourceApkPath: String? = null,
+
+    /**
+     * Discord APK the user supplied as the source of libdiscord.so, copied into app storage.
+     */
+    val voiceEnginePath: String? = null,
 ) : Parcelable {
     @Immutable
     @Parcelize

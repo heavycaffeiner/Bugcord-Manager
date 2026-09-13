@@ -156,10 +156,9 @@
   <string name="patch_step_fetch_kt_version">Fetching target Discord version</string>
   <string name="patch_step_downgrade_check">Checking for newer installations</string>
   <string name="patch_step_restore_cache">Restoring from cache</string>
-  <string name="patch_step_dl_kt_apk">Downloading Discord APK</string>
+  <string name="patch_step_use_source_apk">Reading the Discord APK you supplied</string>
   <string name="patch_step_dl_kotlin">Downloading Kotlin library</string>
   <string name="patch_step_dl_bugcordvoice">Downloading BugcordVoice library</string>
-  <string name="patch_step_dl_libdiscord">Downloading voice engine library</string>
   <string name="patch_step_dl_injector">Downloading Bugcord Injector</string>
   <string name="patch_step_dl_bugcordhook">Downloading Bugcordhook library</string>
   <string name="patch_step_dl_smali">Downloading smali patches</string>
@@ -168,7 +167,7 @@
   <string name="patch_step_patch_certs">Adding modern root certificates</string>
   <string name="patch_step_patch_icon">Patching app icon</string>
   <string name="patch_step_add_bugcordhook">Adding Bugcordhook library</string>
-  <string name="patch_step_replace_libdiscord">Replacing voice engine</string>
+  <string name="patch_step_replace_voice_engine">Replacing voice engine</string>
   <string name="patch_step_patch_smali">Applying smali patches</string>
   <string name="patch_step_reorganize_dex">Adding .dex files to APK</string>
   <string name="patch_step_save_metadata">Store metadata</string>
@@ -217,6 +216,13 @@
   <string name="patchopts_custom_injector_desc">A custom injector build that was imported by Manager.</string>
   <string name="patchopts_custom_patches_title">Custom Patches</string>
   <string name="patchopts_custom_patches_desc">A custom smali patch bundle that was imported by Manager.</string>
+  <string name="patchopts_source_apk_title">Discord APK</string>
+  <string name="patchopts_source_apk_desc">The Discord 126.21 APK to patch. Get it from APKMirror, then pick the file here.</string>
+  <string name="patchopts_voice_engine_title">Voice Engine</string>
+  <string name="patchopts_voice_engine_desc">A recent Discord APK that carries libdiscord.so for your device, used for encrypted voice. Get it from APKMirror.</string>
+  <string name="patchopts_source_apk_none">Not selected</string>
+  <string name="patchopts_apkmirror">Open APKMirror</string>
+  <string name="patchopts_apk_import_fail">Failed to read the selected APK!</string>
   <string name="patchopts_divider_basic">Basic</string>
   <string name="patchopts_divider_advanced">Advanced</string>
   <string name="patchopts_warning_invalid_iconopts">The selected icon options are invalid!</string>

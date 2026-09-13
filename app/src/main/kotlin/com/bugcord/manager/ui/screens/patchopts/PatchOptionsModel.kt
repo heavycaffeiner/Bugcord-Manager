@@ -2,21 +2,28 @@ package com.bugcord.manager.ui.screens.patchopts
 
 import android.content.Context
 import android.content.pm.PackageManager.NameNotFoundException
+import android.net.Uri
 import androidx.compose.runtime.*
 import cafe.adriel.voyager.core.model.ScreenModel
 import cafe.adriel.voyager.core.model.screenModelScope
 import cafe.adriel.voyager.navigator.Navigator
+import com.bugcord.manager.R
+import com.bugcord.manager.manager.PathManager
 import com.bugcord.manager.manager.PreferencesManager
 import com.bugcord.manager.ui.screens.componentopts.ComponentOptionsScreen
 import com.bugcord.manager.ui.screens.componentopts.PatchComponent
 import com.bugcord.manager.ui.util.pushForResult
 import com.bugcord.manager.util.*
 import kotlinx.coroutines.launch
+import java.io.File
+import java.io.IOException
+import java.util.UUID
 
 class PatchOptionsModel(
     prefilledOptions: PatchOptions,
     private val context: Context,
     private val prefs: PreferencesManager,
+    private val paths: PathManager,
 ) : ScreenModel {
     // ---------- Package name state ----------
     var packageName by mutableStateOf(prefilledOptions.packageName)
@@ -56,6 +63,38 @@ class PatchOptionsModel(
     var customPatches by mutableStateOf<PatchComponent?>(null)
         private set
 
+    // ---------- Supplied Discord APKs ----------
+    var sourceApkPath by mutableStateOf(prefilledOptions.sourceApkPath)
+        private set
+    var voiceEnginePath by mutableStateOf(prefilledOptions.voiceEnginePath)
+        private set
+
+    fun importSourceApk(uri: Uri) = importApk(uri, paths.sourceApkDir) { sourceApkPath = it }
+
+    fun importVoiceEngine(uri: Uri) = importApk(uri, paths.voiceEngineDir) { voiceEnginePath = it }
+
+    /**
+     * Copies a picked document into app storage, since the picked URI does not survive
+     * the process that receives it.
+     */
+    private fun importApk(uri: Uri, dir: File, assign: (String) -> Unit) = screenModelScope.launchIO {
+        val target = dir.resolve("${UUID.randomUUID()}.apk")
+        val temp = dir.resolve("${target.name}.tmp")
+
+        try {
+            dir.mkdirs()
+            val opened = context.contentResolver.openInputStream(uri)
+                ?: throw IOException("Cannot open the selected file")
+            opened.use { input -> temp.outputStream().use(input::copyTo) }
+
+            if (!temp.renameTo(target)) throw IOException("Cannot store the selected APK")
+            mainThread { assign(target.absolutePath) }
+        } catch (e: Exception) {
+            temp.delete()
+            mainThread { context.showToast(R.string.patchopts_apk_import_fail) }
+        }
+    }
+
     fun selectCustomInjector(navigator: Navigator) = screenModelScope.launch {
         customInjector = navigator.pushForResult(
             ComponentOptionsScreen(
@@ -94,6 +133,8 @@ class PatchOptionsModel(
             iconReplacement = icon,
             customInjector = customInjector,
             customPatches = customPatches,
+            sourceApkPath = sourceApkPath,
+            voiceEnginePath = voiceEnginePath,
         )
     }
 

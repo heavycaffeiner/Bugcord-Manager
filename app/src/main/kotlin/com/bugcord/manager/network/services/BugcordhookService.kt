@@ -35,12 +35,6 @@ class BugcordhookService(private val http: HttpService) {
      */
     fun getBugcordvoiceUrl(): String = VOICE_URL
 
-    /**
-     * The Discord split APK of the requested build and ABI carries libdiscord.so.
-     */
-    fun getLibraryApkUrl(version: Int, abi: String): String =
-        "${BuildConfig.MAVEN_URL}/com/discord/discord/$version/config-$abi.apk"
-
     private companion object {
         const val ORG = "heavycaffeiner"
         const val HOOK_REPO = "Bugcord-Hook"

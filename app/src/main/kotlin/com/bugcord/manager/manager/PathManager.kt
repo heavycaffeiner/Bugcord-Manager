@@ -150,9 +150,22 @@ class PathManager(
         .resolve("$version.aar")
 
     /**
-     * Resolve a specific path for a cached Discord split APK carrying libdiscord.so.
+     * Directory holding the Discord APK the user supplies as the voice engine source.
      */
-    fun cachedLibdiscordApk(version: Int, abi: String) = patchingDownloadDir
-        .resolve("libdiscord/$version")
-        .resolve("config-$abi.apk")
+    val voiceEngineDir = customComponentsDir.resolve("voice-engine")
+
+    /**
+     * All supplied voice engine APKs.
+     */
+    fun voiceEngines() = voiceEngineDir.listFiles()?.asList() ?: emptyList()
+
+    /**
+     * Directory holding the Discord APK the user supplies to patch.
+     */
+    val sourceApkDir = customComponentsDir.resolve("source-apk")
+
+    /**
+     * All supplied patchable Discord APKs.
+     */
+    fun sourceApks() = sourceApkDir.listFiles()?.asList() ?: emptyList()
 }
