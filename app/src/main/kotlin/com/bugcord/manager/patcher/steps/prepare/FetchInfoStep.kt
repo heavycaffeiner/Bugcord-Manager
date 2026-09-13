@@ -46,7 +46,7 @@ class FetchInfoStep : Step(), KoinComponent {
     /**
      * Discord build whose libdiscord.so is used as the voice engine.
      */
-    val libdiscordVersion: Int = 333205
+    val libdiscordVersion: Int = 333012
 
     override suspend fun execute(container: StepRunner) {
         container.log("Fetching ${BugcordGithubService.DATA_JSON_URL}")
