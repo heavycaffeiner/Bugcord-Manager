@@ -118,6 +118,8 @@ class PatchOptionsModel(
         val invalidChecks = arrayOf(
             packageNameState == PackageNameState.Invalid,
             appNameIsError,
+            sourceApkPath == null,
+            voiceEnginePath == null,
         )
 
         invalidChecks.none { it }

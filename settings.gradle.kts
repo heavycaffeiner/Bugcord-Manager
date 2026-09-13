@@ -13,10 +13,8 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven {
-            name = "bugcord"
-            url = uri("https://maven.aliucord.com/releases")
-        }
+        // Holds the libraries built from the Bugcord-* forks.
+        mavenLocal()
     }
 }
 

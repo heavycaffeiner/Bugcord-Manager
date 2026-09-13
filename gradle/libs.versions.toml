@@ -86,8 +86,8 @@ voyager-koin = { module = "cafe.adriel.voyager:voyager-koin", version.ref = "voy
 
 # Patching
 apksig = { module = "com.android.tools.build:apksig", version.ref = "apksig" }
-axml = { module = "com.aliucord:axml", version.ref = "axml" }
-binaryResources = { module = "com.aliucord:binary-resources", version.ref = "binary-resources" }
+axml = { module = "com.bugcord:axml", version.ref = "axml" }
+binaryResources = { module = "com.bugcord:binary-resources", version.ref = "binary-resources" }
 bouncycastle = { module = "org.bouncycastle:bcpkix-jdk18on", version.ref = "bouncycastle" }
 diff = { module = "io.github.java-diff-utils:java-diff-utils", version.ref = "diff" }
 smali = { module = "com.android.tools.smali:smali", version.ref = "smali" }
@@ -105,7 +105,7 @@ hiddenApi-stub = { module = "dev.rikka.hidden:stub", version.ref = "hiddenApi-st
 # Other
 microg = { module = "org.microg.gms:play-services-safetynet", version.ref = "microg" }
 desugaring = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugaring" }
-libsu = { module = "com.aliucord.libsu:core", version.ref = "libsu" }
+libsu = { module = "com.bugcord.libsu:core", version.ref = "libsu" }
 
 [bundles]
 accompanist = [
