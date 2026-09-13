@@ -3,6 +3,7 @@ name: Build & Publish Release App
 on:
   push:
     tags: [ "v*.*.*" ]
+  workflow_dispatch:
 
 concurrency:
   group: "release"
