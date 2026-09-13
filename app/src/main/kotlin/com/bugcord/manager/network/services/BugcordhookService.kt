@@ -37,10 +37,9 @@ class BugcordhookService(private val http: HttpService) {
 
     /**
      * The Discord split APK of the requested build and ABI carries libdiscord.so.
-     * The ABI is spelled with an underscore in the split file name.
      */
     fun getLibraryApkUrl(version: Int, abi: String): String =
-        "${BuildConfig.MAVEN_URL}/com/discord/discord/$version/split_config.${abi.replace('-', '_')}.apk"
+        "${BuildConfig.MAVEN_URL}/com/discord/discord/$version/config-$abi.apk"
 
     private companion object {
         const val ORG = "heavycaffeiner"
