@@ -129,7 +129,7 @@ object ManifestPatcher {
                                     REQUEST_LEGACY_EXTERNAL_STORAGE to true,
                                     VM_SAFE_MODE to true,
                                     USE_EMBEDDED_DEX to true,
-                                    EXTRACT_NATIVE_LIBS to false,
+                                    EXTRACT_NATIVE_LIBS to true,
                                 )
                             ) {
                                 private var addDebuggable = debuggable
@@ -221,7 +221,7 @@ object ManifestPatcher {
                                         EXTRACT_NATIVE_LIBS,
                                         android.R.attr.extractNativeLibs,
                                         TYPE_INT_BOOLEAN,
-                                        0
+                                        1
                                     )
 
                                     super.end()
