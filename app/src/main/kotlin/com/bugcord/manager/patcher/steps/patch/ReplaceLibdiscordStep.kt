@@ -24,12 +24,9 @@ class ReplaceLibdiscordStep : Step(), KoinComponent {
         val apk = container.getStep<CopyDependenciesStep>().apk
         val libApk = container.getStep<DownloadLibdiscordStep>().getStoredFile(container)
 
+        // The download step verifies this entry, so a miss here means the cached file was tampered with
         val libBytes = ZipReader(libApk).use { it.openEntry("lib/$currentDeviceArch/libdiscord.so")?.read() }
-
-        if (libBytes == null) {
-            container.log("No libdiscord.so for arch $currentDeviceArch in split apk; leaving original engine in place")
-            return
-        }
+            ?: throw IllegalStateException("No libdiscord.so for arch $currentDeviceArch in the voice engine split")
 
         val apkLibPath = "lib/$currentDeviceArch/libdiscord.so"
         val existing = ZipReader(apk).use { it.entryNames.toHashSet() }
