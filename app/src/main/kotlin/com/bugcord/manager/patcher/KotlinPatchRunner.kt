@@ -5,7 +5,7 @@ import com.bugcord.manager.patcher.steps.install.*
 import com.bugcord.manager.patcher.steps.patch.*
 import com.bugcord.manager.patcher.steps.prepare.*
 import com.bugcord.manager.ui.screens.patchopts.PatchOptions
-import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.toPersistentList
 
 /**
  * Used for installing the old Kotlin Discord app.
@@ -13,35 +13,35 @@ import kotlinx.collections.immutable.persistentListOf
 class KotlinPatchRunner(
     options: PatchOptions,
 ) : StepRunner() {
-    override val steps = persistentListOf(
+    override val steps = buildList {
         // Prepare
-        FetchInfoStep(),
-        DowngradeCheckStep(options),
-        RestoreDownloadsStep(),
+        add(FetchInfoStep())
+        add(DowngradeCheckStep(options))
+        add(RestoreDownloadsStep())
 
         // Download
-        SourceApkStep(options.sourceApkPath),
-        DownloadInjectorStep(options.customInjector),
-        DownloadBugcordhookStep(),
-        DownloadKotlinStep(),
-        DownloadBugcordvoiceStep(),
-        DownloadPatchesStep(options.customPatches),
-        CopyDependenciesStep(),
+        add(SourceApkStep(options.sourceApkPath))
+        add(DownloadInjectorStep(options.customInjector))
+        add(DownloadBugcordhookStep())
+        add(DownloadKotlinStep())
+        add(DownloadBugcordvoiceStep())
+        add(DownloadPatchesStep(options.customPatches))
+        add(CopyDependenciesStep())
 
         // Patch
-        SmaliPatchStep(),
-        PatchIconsStep(options),
-        PatchManifestStep(options),
-        PatchCertsStep(),
-        ReorganizeDexStep(),
-        AddBugcordhookLibsStep(),
-        ReplaceVoiceEngineStep(options.voiceEnginePath),
-        SaveMetadataStep(options),
+        add(SmaliPatchStep())
+        add(PatchIconsStep(options))
+        add(PatchManifestStep(options))
+        add(PatchCertsStep())
+        add(ReorganizeDexStep())
+        add(AddBugcordhookLibsStep())
+        if (options.replaceVoiceEngine) add(ReplaceVoiceEngineStep(options.voiceEnginePath))
+        add(SaveMetadataStep(options))
 
         // Install
-        AlignmentStep(),
-        SigningStep(options),
-        InstallStep(options),
-        CleanupStep(),
-    )
+        add(AlignmentStep())
+        add(SigningStep(options))
+        add(InstallStep(options))
+        add(CleanupStep())
+    }.toPersistentList()
 }

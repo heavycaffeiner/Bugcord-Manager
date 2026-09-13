@@ -223,6 +223,8 @@
   <string name="patchopts_source_apk_none">Not selected</string>
   <string name="patchopts_apkmirror">Open APKMirror</string>
   <string name="patchopts_apk_import_fail">Failed to read the selected APK!</string>
+  <string name="patchopts_replace_voice_engine_title">Replace voice engine</string>
+  <string name="patchopts_replace_voice_engine_desc">Use libdiscord.so from the selected Discord APK. Turn this off if the patched app crashes on launch.</string>
   <string name="patchopts_divider_basic">Basic</string>
   <string name="patchopts_divider_advanced">Advanced</string>
   <string name="patchopts_warning_invalid_iconopts">The selected icon options are invalid!</string>

@@ -3,6 +3,7 @@ package com.bugcord.manager.ui.screens.patchopts
 import android.content.Context
 import android.content.pm.PackageManager.NameNotFoundException
 import android.net.Uri
+import android.provider.OpenableColumns
 import androidx.compose.runtime.*
 import cafe.adriel.voyager.core.model.ScreenModel
 import cafe.adriel.voyager.core.model.screenModelScope
@@ -68,31 +69,55 @@ class PatchOptionsModel(
         private set
     var voiceEnginePath by mutableStateOf(prefilledOptions.voiceEnginePath)
         private set
+    var replaceVoiceEngine by mutableStateOf(prefilledOptions.replaceVoiceEngine)
+        private set
 
-    fun importSourceApk(uri: Uri) = importApk(uri, paths.sourceApkDir) { sourceApkPath = it }
+    fun changeReplaceVoiceEngine(value: Boolean) {
+        replaceVoiceEngine = value
+    }
 
-    fun importVoiceEngine(uri: Uri) = importApk(uri, paths.voiceEngineDir) { voiceEnginePath = it }
+    fun importSourceApk(uri: Uri) = importApk(uri, paths.sourceApkDir, "discord") { sourceApkPath = it }
+
+    fun importVoiceEngine(uri: Uri) = importApk(uri, paths.voiceEngineDir, "engine") { voiceEnginePath = it }
 
     /**
      * Copies a picked document into app storage, since the picked URI does not survive
      * the process that receives it.
      */
-    private fun importApk(uri: Uri, dir: File, assign: (String) -> Unit) = screenModelScope.launchIO {
-        val target = dir.resolve("${UUID.randomUUID()}.apk")
-        val temp = dir.resolve("${target.name}.tmp")
+    private fun importApk(uri: Uri, dir: File, prefix: String, assign: (String) -> Unit) =
+        screenModelScope.launchIO {
+            val target = dir.resolve("$prefix-${documentName(uri)}")
+            val temp = dir.resolve("${target.name}.tmp")
 
-        try {
-            dir.mkdirs()
-            val opened = context.contentResolver.openInputStream(uri)
-                ?: throw IOException("Cannot open the selected file")
-            opened.use { input -> temp.outputStream().use(input::copyTo) }
+            try {
+                dir.mkdirs()
+                target.delete()
+                val opened = context.contentResolver.openInputStream(uri)
+                    ?: throw IOException("Cannot open the selected file")
+                opened.use { input -> temp.outputStream().use(input::copyTo) }
 
-            if (!temp.renameTo(target)) throw IOException("Cannot store the selected APK")
-            mainThread { assign(target.absolutePath) }
-        } catch (e: Exception) {
-            temp.delete()
-            mainThread { context.showToast(R.string.patchopts_apk_import_fail) }
+                if (!temp.renameTo(target)) throw IOException("Cannot store the selected APK")
+                mainThread { assign(target.absolutePath) }
+            } catch (e: Exception) {
+                temp.delete()
+                mainThread { context.showToast(R.string.patchopts_apk_import_fail) }
+            }
         }
+
+    /**
+     * The name the picker showed, so the selection stays recognisable in the options screen.
+     */
+    private fun documentName(uri: Uri): String {
+        val queried = runCatching {
+            context.contentResolver.query(uri, arrayOf(OpenableColumns.DISPLAY_NAME), null, null, null)
+                ?.use { cursor -> if (cursor.moveToFirst()) cursor.getString(0) else null }
+        }.getOrNull()
+
+        val cleaned = (queried ?: uri.lastPathSegment ?: "discord.apk")
+            .replace(Regex("[^A-Za-z0-9._-]"), "_")
+            .takeLast(64)
+
+        return if (cleaned.contains('.')) cleaned else "$cleaned.apk"
     }
 
     fun selectCustomInjector(navigator: Navigator) = screenModelScope.launch {
@@ -119,7 +144,7 @@ class PatchOptionsModel(
             packageNameState == PackageNameState.Invalid,
             appNameIsError,
             sourceApkPath == null,
-            voiceEnginePath == null,
+            replaceVoiceEngine && voiceEnginePath == null,
         )
 
         invalidChecks.none { it }
@@ -137,6 +162,7 @@ class PatchOptionsModel(
             customPatches = customPatches,
             sourceApkPath = sourceApkPath,
             voiceEnginePath = voiceEnginePath,
+            replaceVoiceEngine = replaceVoiceEngine,
         )
     }
 

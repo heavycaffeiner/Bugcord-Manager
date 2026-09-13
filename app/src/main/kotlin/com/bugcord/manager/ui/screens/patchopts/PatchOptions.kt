@@ -54,6 +54,11 @@ data class PatchOptions(
      * Discord APK the user supplied as the source of libdiscord.so, copied into app storage.
      */
     val voiceEnginePath: String? = null,
+
+    /**
+     * Whether the supplied voice engine replacement is injected.
+     */
+    val replaceVoiceEngine: Boolean = true,
 ) : Parcelable {
     @Immutable
     @Parcelize

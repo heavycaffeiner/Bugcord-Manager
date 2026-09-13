@@ -44,6 +44,8 @@ private fun PatchOptionsScreenPreview(
             voiceEnginePath = null,
             onPickVoiceEngine = {},
             onOpenApkMirror = {},
+            replaceVoiceEngine = true,
+            setReplaceVoiceEngine = {},
             isConfigValid = parameters.isConfigValid,
             onInstall = {},
         )

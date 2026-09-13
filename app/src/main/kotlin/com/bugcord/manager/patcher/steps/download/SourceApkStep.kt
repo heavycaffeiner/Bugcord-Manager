@@ -10,6 +10,8 @@ import com.bugcord.manager.patcher.util.DiscordApkVerifier
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 import java.io.File
+import java.io.InputStream
+import java.util.zip.ZipFile
 
 /**
  * Takes the Discord APK the user supplied and stages it as the patch target.
@@ -29,31 +31,79 @@ class SourceApkStep(private val sourcePath: String?) : Step(), KoinComponent {
         private set
 
     override suspend fun execute(container: StepRunner) {
-        val source = sourcePath?.let(::File)
+        val supplied = sourcePath?.let(::File)
             ?: throw IllegalStateException("No Discord APK selected, pick one before installing")
-        if (!source.isFile)
-            throw IllegalStateException("Selected Discord APK no longer exists: ${source.absolutePath}")
+        if (!supplied.isFile)
+            throw IllegalStateException("Selected Discord APK no longer exists: ${supplied.absolutePath}")
 
-        container.log("Reading supplied Discord APK ${source.absolutePath}")
+        container.log("Reading supplied Discord APK ${supplied.name}")
 
-        val info = application.packageManager.getPackageArchiveInfo(source.absolutePath, 0)
-            ?: throw IllegalStateException("Selected file is not an APK")
-        if (info.versionCode != SUPPORTED_DISCORD_VERSION)
-            throw IllegalStateException(
-                "Discord ${info.versionName} is not supported, install needs version $SUPPORTED_VERSION_NAME"
+        val base = findBaseApk(supplied, container)
+            ?: throw IllegalStateException(
+                "No Discord $SUPPORTED_VERSION_NAME APK in ${supplied.name}"
             )
 
         container.log("Verifying Discord signature")
-        DiscordApkVerifier.verifyDiscordSignature(source)
+        DiscordApkVerifier.verifyDiscordSignature(base)
 
         storedFile = paths.cachedDiscordApk(SUPPORTED_DISCORD_VERSION)
         storedFile.parentFile!!.mkdirs()
-        source.copyTo(storedFile, overwrite = true)
+        base.copyTo(storedFile, overwrite = true)
+    }
+
+    /**
+     * The supplied file is either the APK itself or a bundle whose base member is the target.
+     * Members are staged on disk before they are read, since they have to be verified.
+     */
+    private fun findBaseApk(supplied: File, container: StepRunner): File? {
+        if (versionCodeOf(supplied) == SUPPORTED_DISCORD_VERSION) return supplied
+
+        val staged = paths.patchingDownloadDir.resolve("source-apk").apply { mkdirs() }
+
+        ZipFile(supplied).use { bundle ->
+            for (entry in bundle.entries()) {
+                if (entry.isDirectory || !entry.name.endsWith(".apk")) continue
+
+                val file = staged.resolve(entry.name.substringAfterLast('/'))
+                container.log("Checking bundle member ${entry.name}")
+                bundle.getInputStream(entry).use { input -> writeBounded(input, file, MAX_MEMBER_BYTES) }
+
+                if (versionCodeOf(file) == SUPPORTED_DISCORD_VERSION) return file
+                file.delete()
+            }
+        }
+
+        return null
+    }
+
+    private fun versionCodeOf(apk: File): Int? =
+        application.packageManager.getPackageArchiveInfo(apk.absolutePath, 0)?.versionCode
+
+    private fun writeBounded(input: InputStream, target: File, limit: Long) {
+        target.outputStream().use { output ->
+            val buffer = ByteArray(DEFAULT_BUFFER_SIZE)
+            var written = 0L
+
+            while (true) {
+                val read = input.read(buffer)
+                if (read < 0) break
+
+                written += read
+                if (written > limit) {
+                    target.delete()
+                    throw IllegalStateException("Archive member is larger than expected")
+                }
+
+                output.write(buffer, 0, read)
+            }
+        }
     }
 
     private companion object {
         /** Last Discord version before the React Native rewrite. */
         const val SUPPORTED_DISCORD_VERSION = 126021
         const val SUPPORTED_VERSION_NAME = "126.21"
+        /** Bundle members are APKs of a few hundred MiB at most. */
+        const val MAX_MEMBER_BYTES = 512L * 1024 * 1024
     }
 }

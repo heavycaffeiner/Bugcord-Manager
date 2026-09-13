@@ -100,6 +100,8 @@ class PatchOptionsScreen(
             voiceEnginePath = model.voiceEnginePath,
             onPickVoiceEngine = { enginePicker.launch(arrayOf("*/*")) },
             onOpenApkMirror = { uriHandler.openUri(APKMIRROR_DISCORD_URL) },
+            replaceVoiceEngine = model.replaceVoiceEngine,
+            setReplaceVoiceEngine = model::changeReplaceVoiceEngine,
 
             isConfigValid = model.isConfigValid,
             onInstall = onInstall@{
@@ -147,6 +149,8 @@ fun PatchOptionsScreenContent(
     voiceEnginePath: String?,
     onPickVoiceEngine: () -> Unit,
     onOpenApkMirror: () -> Unit,
+    replaceVoiceEngine: Boolean,
+    setReplaceVoiceEngine: (Boolean) -> Unit,
 
     isConfigValid: Boolean,
     onInstall: () -> Unit,
@@ -199,6 +203,14 @@ fun PatchOptionsScreenContent(
                     )
                 }
             }
+
+            SwitchPatchOption(
+                icon = painterResource(R.drawable.ic_extension),
+                name = stringResource(R.string.patchopts_replace_voice_engine_title),
+                description = stringResource(R.string.patchopts_replace_voice_engine_desc),
+                value = replaceVoiceEngine,
+                onValueChange = setReplaceVoiceEngine,
+            )
 
             IconPatchOption(
                 icon = painterResource(R.drawable.ic_app_shortcut),
