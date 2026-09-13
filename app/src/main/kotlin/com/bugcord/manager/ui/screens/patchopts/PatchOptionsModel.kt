@@ -64,9 +64,7 @@ class PatchOptionsModel(
     var customPatches by mutableStateOf<PatchComponent?>(null)
         private set
 
-    // ---------- Supplied Discord APKs ----------
-    var sourceApkPath by mutableStateOf(prefilledOptions.sourceApkPath)
-        private set
+    // ---------- Supplied Voice Engine APK / APKM ----------
     var voiceEnginePath by mutableStateOf(prefilledOptions.voiceEnginePath)
         private set
     var replaceVoiceEngine by mutableStateOf(prefilledOptions.replaceVoiceEngine)
@@ -75,8 +73,6 @@ class PatchOptionsModel(
     fun changeReplaceVoiceEngine(value: Boolean) {
         replaceVoiceEngine = value
     }
-
-    fun importSourceApk(uri: Uri) = importApk(uri, paths.sourceApkDir, "discord") { sourceApkPath = it }
 
     fun importVoiceEngine(uri: Uri) = importApk(uri, paths.voiceEngineDir, "engine") { voiceEnginePath = it }
 
@@ -143,7 +139,6 @@ class PatchOptionsModel(
         val invalidChecks = arrayOf(
             packageNameState == PackageNameState.Invalid,
             appNameIsError,
-            sourceApkPath == null,
             replaceVoiceEngine && voiceEnginePath == null,
         )
 
@@ -160,7 +155,6 @@ class PatchOptionsModel(
             iconReplacement = icon,
             customInjector = customInjector,
             customPatches = customPatches,
-            sourceApkPath = sourceApkPath,
             voiceEnginePath = voiceEnginePath,
             replaceVoiceEngine = replaceVoiceEngine,
         )

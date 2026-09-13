@@ -39,8 +39,6 @@ private fun PatchOptionsScreenPreview(
             onSelectCustomInjector = {},
             customPatches = parameters.customPatches,
             onSelectCustomPatches = {},
-            sourceApkPath = null,
-            onPickSourceApk = {},
             voiceEnginePath = null,
             onPickVoiceEngine = {},
             onOpenApkMirror = {},

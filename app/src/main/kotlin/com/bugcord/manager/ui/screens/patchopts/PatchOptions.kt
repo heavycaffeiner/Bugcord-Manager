@@ -46,11 +46,6 @@ data class PatchOptions(
     val customPatches: PatchComponent? = null,
 
     /**
-     * Discord APK the user supplied to patch, copied into app storage.
-     */
-    val sourceApkPath: String? = null,
-
-    /**
      * Discord APK the user supplied as the source of libdiscord.so, copied into app storage.
      */
     val voiceEnginePath: String? = null,

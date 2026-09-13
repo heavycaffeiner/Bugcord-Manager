@@ -20,7 +20,7 @@ class KotlinPatchRunner(
         add(RestoreDownloadsStep())
 
         // Download
-        add(SourceApkStep(options.sourceApkPath))
+        add(DownloadDiscordStep())
         add(DownloadInjectorStep(options.customInjector))
         add(DownloadBugcordhookStep())
         add(DownloadKotlinStep())

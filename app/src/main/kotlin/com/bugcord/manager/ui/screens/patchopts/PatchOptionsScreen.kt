@@ -39,8 +39,8 @@ import kotlinx.parcelize.Parcelize
 import org.koin.core.parameter.parametersOf
 import java.io.File
 
-/** Discord downloads on APKMirror, the only source of the APKs this app patches. */
-private const val APKMIRROR_DISCORD_URL = "https://www.apkmirror.com/apk/discord/discord-chat-for-gamers/"
+/** Discord 344.13 release on APKMirror, recommended for modern voice engine backporting. */
+private const val APKMIRROR_DISCORD_URL = "https://www.apkmirror.com/?post_type=app_release&searchtype=apk&s=discord+344.13"
 
 @Parcelize
 class PatchOptionsScreen(
@@ -57,9 +57,6 @@ class PatchOptionsScreen(
         val model = koinScreenModel<PatchOptionsModel> { parametersOf(prefilledOptions ?: PatchOptions.Default) }
         val iconModel = koinScreenModel<IconOptionsModel> { parametersOf((prefilledOptions ?: PatchOptions.Default).iconReplacement) }
 
-        val apkPicker = rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
-            uri?.let(model::importSourceApk)
-        }
         val enginePicker = rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
             uri?.let(model::importVoiceEngine)
         }
@@ -95,8 +92,6 @@ class PatchOptionsScreen(
             onSelectCustomInjector = { model.selectCustomInjector(navigator) },
             onSelectCustomPatches = { model.selectCustomPatches(navigator) },
 
-            sourceApkPath = model.sourceApkPath,
-            onPickSourceApk = { apkPicker.launch(arrayOf("*/*")) },
             voiceEnginePath = model.voiceEnginePath,
             onPickVoiceEngine = { enginePicker.launch(arrayOf("*/*")) },
             onOpenApkMirror = { uriHandler.openUri(APKMIRROR_DISCORD_URL) },
@@ -144,8 +139,6 @@ fun PatchOptionsScreenContent(
     customPatches: PatchComponent?,
     onSelectCustomPatches: () -> Unit,
 
-    sourceApkPath: String?,
-    onPickSourceApk: () -> Unit,
     voiceEnginePath: String?,
     onPickVoiceEngine: () -> Unit,
     onOpenApkMirror: () -> Unit,
@@ -175,35 +168,6 @@ fun PatchOptionsScreenContent(
 
             TextDivider(text = stringResource(R.string.patchopts_divider_basic))
 
-            IconPatchOption(
-                icon = painterResource(R.drawable.ic_extension),
-                name = stringResource(R.string.patchopts_source_apk_title),
-                description = stringResource(R.string.patchopts_source_apk_desc),
-            ) {
-                FilledTonalButton(onClick = onPickSourceApk) {
-                    Text(
-                        text = sourceApkPath?.let { File(it).name }
-                            ?: stringResource(R.string.patchopts_source_apk_none)
-                    )
-                }
-                TextButton(onClick = onOpenApkMirror, modifier = Modifier.padding(start = 8.dp)) {
-                    Text(stringResource(R.string.patchopts_apkmirror))
-                }
-            }
-
-            IconPatchOption(
-                icon = painterResource(R.drawable.ic_extension),
-                name = stringResource(R.string.patchopts_voice_engine_title),
-                description = stringResource(R.string.patchopts_voice_engine_desc),
-            ) {
-                FilledTonalButton(onClick = onPickVoiceEngine) {
-                    Text(
-                        text = voiceEnginePath?.let { File(it).name }
-                            ?: stringResource(R.string.patchopts_source_apk_none)
-                    )
-                }
-            }
-
             SwitchPatchOption(
                 icon = painterResource(R.drawable.ic_extension),
                 name = stringResource(R.string.patchopts_replace_voice_engine_title),
@@ -211,6 +175,29 @@ fun PatchOptionsScreenContent(
                 value = replaceVoiceEngine,
                 onValueChange = setReplaceVoiceEngine,
             )
+
+            if (replaceVoiceEngine) {
+                IconPatchOption(
+                    icon = painterResource(R.drawable.ic_extension),
+                    name = stringResource(R.string.patchopts_voice_engine_title),
+                    description = stringResource(R.string.patchopts_voice_engine_desc),
+                ) {
+                    Column(
+                        horizontalAlignment = Alignment.End,
+                        verticalArrangement = Arrangement.spacedBy(4.dp),
+                    ) {
+                        FilledTonalButton(onClick = onPickVoiceEngine) {
+                            Text(
+                                text = voiceEnginePath?.let { File(it).name }
+                                    ?: stringResource(R.string.patchopts_voice_engine_none)
+                            )
+                        }
+                        TextButton(onClick = onOpenApkMirror) {
+                            Text(stringResource(R.string.patchopts_apkmirror))
+                        }
+                    }
+                }
+            }
 
             IconPatchOption(
                 icon = painterResource(R.drawable.ic_app_shortcut),
@@ -333,7 +320,7 @@ fun PatchOptionsScreenContent(
                 }
             }
 
-            Spacer(Modifier.weight(1f))
+            Spacer(Modifier.height(16.dp))
 
             FilledTonalButton(
                 enabled = isConfigValid,
