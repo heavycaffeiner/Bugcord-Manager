@@ -31,6 +31,7 @@ class SaveMetadataStep(private val options: PatchOptions) : Step(), KoinComponen
         val injector = container.getStep<DownloadInjectorStep>()
         val patches = container.getStep<DownloadPatchesStep>()
         val kotlin = container.getStep<DownloadKotlinStep>()
+        val info = container.getStep<com.bugcord.manager.patcher.steps.prepare.FetchInfoStep>()
 
         val metadata = InstallMetadata(
             customManager = !BuildConfig.RELEASE,
@@ -39,8 +40,10 @@ class SaveMetadataStep(private val options: PatchOptions) : Step(), KoinComponen
             injectorVersion = injector.getVersion(container),
             patchesVersion = patches.getVersion(container),
             kotlinVersion = kotlin.getVersion(container),
+            coreVersion = info.data.coreVersion,
             options = options,
         )
+
 
         container.log("Writing serialized install metadata to APK")
         ZipWriter(apk, /* append = */ true).use {

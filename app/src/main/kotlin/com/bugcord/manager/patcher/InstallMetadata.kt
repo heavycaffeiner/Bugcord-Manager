@@ -40,6 +40,12 @@ data class InstallMetadata(
     val kotlinVersion: SemVer,
 
     /**
+     * Version of the Bugcord core and bundled voice library.
+     * Nullable for metadata written by older Manager versions; such installs are outdated.
+     */
+    val coreVersion: SemVer? = null,
+
+    /**
      * The user-selected options for this installation.
      */
     val options: PatchOptions,

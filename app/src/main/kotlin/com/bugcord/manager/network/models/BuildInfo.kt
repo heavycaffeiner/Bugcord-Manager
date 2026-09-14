@@ -19,10 +19,12 @@ data class BuildInfo(
     @Serializable(with = IntAsStringSerializer::class)
     @SerialName("versionCode")
     val discordVersionCode: Int,
-    // @SerialName("versionName")
-    // val discordVersionName: Int,
-    // @SerialName("coreVersion")
-    // val coreVersion: SemVer,
+    /**
+     * Version of the Bugcord core and bundled voice library.
+     */
+    @SerialName("coreVersion")
+    val coreVersion: SemVer,
+
     @SerialName("injectorVersion")
     val injectorVersion: SemVer,
     @SerialName("patchesVersion")

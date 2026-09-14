@@ -45,6 +45,8 @@ class HomeModel(
     private val refreshingLock = Mutex()
     private var remoteDataJson: BuildInfo? = null
     private var latestBugcordhookVersion: SemVer? = null
+    private val installMetadataCache = mutableMapOf<String, InstallMetadata?>()
+
 
     init {
         refresh()
@@ -103,11 +105,8 @@ class HomeModel(
      */
     fun createPrefilledPatchOptsScreen(packageName: String): PatchOptionsScreen {
         val metadata = try {
-            val applicationInfo = application.packageManager.getApplicationInfo(packageName, 0)
-            val metadataFile = ZipReader(applicationInfo.publicSourceDir)
-                .use { it.openEntry("bugcord.json")?.read() }
-
-            metadataFile?.let { json.decodeFromStream<InstallMetadata>(it.inputStream()) }
+            val packageInfo = application.packageManager.getPackageInfo(packageName, PackageManager.GET_META_DATA)
+            readInstallMetadata(packageInfo)
         } catch (t: Throwable) {
             Log.w(BuildConfig.TAG, "Failed to parse Bugcord install metadata from package $packageName", t)
             null
@@ -208,15 +207,38 @@ class HomeModel(
      * Obtains all installed packages on the device that are an Bugcord installation.
      */
     private fun fetchBugcordPackages(): List<PackageInfo> {
+        installMetadataCache.clear()
+
         return application.packageManager
             .getInstalledPackages(PackageManager.GET_META_DATA)
             .filter {
-                // Packages installed via the legacy Installer do not have the metadata marker
+                // Packages installed via the legacy Installer may lack the marker;
+                // inspect the embedded metadata as a fallback for custom package names.
                 val isBugcordPkg = it.packageName == "com.bugcord"
                 val hasBugcordMeta = it.applicationInfo?.metaData?.containsKey("isBugcord") == true
-                isBugcordPkg || hasBugcordMeta
+                isBugcordPkg || hasBugcordMeta || readInstallMetadata(it) != null
             }
     }
+
+    private fun readInstallMetadata(pkg: PackageInfo): InstallMetadata? {
+        if (installMetadataCache.containsKey(pkg.packageName))
+            return installMetadataCache[pkg.packageName]
+
+        val metadata = try {
+            val apkPath = pkg.applicationInfo?.publicSourceDir ?: return null
+            val metadataFile = ZipReader(apkPath).use { it.openEntry("bugcord.json")?.read() }
+                ?: return null
+
+            json.decodeFromStream<InstallMetadata>(metadataFile.inputStream())
+        } catch (t: Throwable) {
+            Log.d(BuildConfig.TAG, "Failed to parse Bugcord InstallMetadata from package ${pkg.packageName}", t)
+            null
+        }
+
+        installMetadataCache[pkg.packageName] = metadata
+        return metadata
+    }
+
 
     /**
      * Attempts to determine whether the Bugcord installation is up-to-date.
@@ -236,20 +258,14 @@ class HomeModel(
         if (remoteBuildData.discordVersionCode != versionCode) return false
 
         // Try to parse install metadata. If none present, install was made via legacy installer.
-        val apkPath = pkg.applicationInfo?.publicSourceDir ?: return false
-        val installMetadata = try {
-            val metadataFile = ZipReader(apkPath).use { it.openEntry("bugcord.json")?.read() }
-                ?: return false
+        val installMetadata = readInstallMetadata(pkg) ?: return false
 
-            json.decodeFromStream<InstallMetadata>(metadataFile.inputStream())
-        } catch (t: Throwable) {
-            // If it failed to parse, then it's outdated
-            Log.d(BuildConfig.TAG, "Failed to parse Bugcord InstallMetadata from package ${pkg.packageName}", t)
-            return false
-        }
+        // Core updates must remain visible even for installations with custom components.
+        if (installMetadata.coreVersion != remoteBuildData.coreVersion) return false
 
         // TODO: indicate this is a custom installation in the UI
         // If this installation used custom components, then assume that updates aren't needed
+        // for those components.
         if (installMetadata.options.customInjector != null ||
             installMetadata.options.customPatches != null
         ) {
