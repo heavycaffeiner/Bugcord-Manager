@@ -149,23 +149,9 @@ class PathManager(
         .resolve("bugcordvoice")
         .resolve("$version.aar")
 
-    /**
-     * Directory holding the Discord APK the user supplies as the voice engine source.
-     */
-    val voiceEngineDir = customComponentsDir.resolve("voice-engine")
 
-    /**
-     * All supplied voice engine APKs.
-     */
-    fun voiceEngines() = voiceEngineDir.listFiles()?.asList() ?: emptyList()
-
-    /**
-     * Directory holding the Discord APK the user supplies to patch.
-     */
-    val sourceApkDir = customComponentsDir.resolve("source-apk")
-
-    /**
-     * All supplied patchable Discord APKs.
-     */
-    fun sourceApks() = sourceApkDir.listFiles()?.asList() ?: emptyList()
+    /** Resolve the ABI-specific cached voice engine library. */
+    fun cachedVoiceEngine(version: SemVer, abi: String) = patchingDownloadDir
+        .resolve("voice-engine")
+        .resolve("$version-$abi.so")
 }

@@ -1,8 +1,6 @@
 package com.bugcord.manager.ui.screens.patchopts
 
 import android.os.Parcelable
-import androidx.activity.compose.rememberLauncherForActivityResult
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.*
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
@@ -14,7 +12,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
@@ -37,10 +34,6 @@ import com.bugcord.manager.util.showToast
 import kotlinx.parcelize.IgnoredOnParcel
 import kotlinx.parcelize.Parcelize
 import org.koin.core.parameter.parametersOf
-import java.io.File
-
-/** Discord 344.13 release on APKMirror, recommended for modern voice engine backporting. */
-private const val APKMIRROR_DISCORD_URL = "https://www.apkmirror.com/?post_type=app_release&searchtype=apk&s=discord+344.13"
 
 @Parcelize
 class PatchOptionsScreen(
@@ -53,21 +46,14 @@ class PatchOptionsScreen(
     override fun Content() {
         val context = LocalContext.current
         val navigator = LocalNavigator.currentOrThrow
-        val uriHandler = LocalUriHandler.current
         val model = koinScreenModel<PatchOptionsModel> { parametersOf(prefilledOptions ?: PatchOptions.Default) }
         val iconModel = koinScreenModel<IconOptionsModel> { parametersOf((prefilledOptions ?: PatchOptions.Default).iconReplacement) }
-
-        val enginePicker = rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
-            uri?.let(model::importVoiceEngine)
-        }
 
         PatchOptionsScreenContent(
             isUpdate = prefilledOptions != null,
             isDevMode = model.isDevMode,
-
             debuggable = model.debuggable,
             setDebuggable = model::changeDebuggable,
-
             selectedColor = when (iconModel.mode) {
                 IconOptionsMode.Original -> PatchOptions.IconReplacement.BlurpleColor
                 IconOptionsMode.OldDiscord -> PatchOptions.IconReplacement.OldBlurpleColor
@@ -78,26 +64,16 @@ class PatchOptionsScreen(
             oldLogo = iconModel.mode == IconOptionsMode.OldDiscord,
             selectedImage = { iconModel.selectedImage },
             onOpenIconOptions = { navigator.push(IconOptionsScreen()) },
-
             appName = model.appName,
             appNameIsError = model.appNameIsError,
             setAppName = model::changeAppName,
-
             packageName = model.packageName,
             packageNameState = model.packageNameState,
             setPackageName = model::changePackageName,
-
             customInjector = model.customInjector,
-            customPatches = model.customPatches,
             onSelectCustomInjector = { model.selectCustomInjector(navigator) },
+            customPatches = model.customPatches,
             onSelectCustomPatches = { model.selectCustomPatches(navigator) },
-
-            voiceEnginePath = model.voiceEnginePath,
-            onPickVoiceEngine = { enginePicker.launch(arrayOf("*/*")) },
-            onOpenApkMirror = { uriHandler.openUri(APKMIRROR_DISCORD_URL) },
-            replaceVoiceEngine = model.replaceVoiceEngine,
-            setReplaceVoiceEngine = model::changeReplaceVoiceEngine,
-
             isConfigValid = model.isConfigValid,
             onInstall = onInstall@{
                 val iconConfig = iconModel.generateConfig()
@@ -106,8 +82,7 @@ class PatchOptionsScreen(
                     return@onInstall
                 }
 
-                val patchConfig = model.generateConfig(iconConfig)
-                navigator.push(PatchingScreen(patchConfig))
+                navigator.push(PatchingScreen(model.generateConfig(iconConfig)))
             },
         )
     }
@@ -117,34 +92,22 @@ class PatchOptionsScreen(
 fun PatchOptionsScreenContent(
     isUpdate: Boolean,
     isDevMode: Boolean,
-
     debuggable: Boolean,
     setDebuggable: (Boolean) -> Unit,
-
     oldLogo: Boolean,
     selectedColor: Color?,
     selectedImage: () -> ByteArray?,
     onOpenIconOptions: () -> Unit,
-
     appName: String,
     appNameIsError: Boolean,
     setAppName: (String) -> Unit,
-
     packageName: String,
     packageNameState: PackageNameState,
     setPackageName: (String) -> Unit,
-
     customInjector: PatchComponent?,
     onSelectCustomInjector: () -> Unit,
     customPatches: PatchComponent?,
     onSelectCustomPatches: () -> Unit,
-
-    voiceEnginePath: String?,
-    onPickVoiceEngine: () -> Unit,
-    onOpenApkMirror: () -> Unit,
-    replaceVoiceEngine: Boolean,
-    setReplaceVoiceEngine: (Boolean) -> Unit,
-
     isConfigValid: Boolean,
     onInstall: () -> Unit,
 ) {
@@ -168,35 +131,16 @@ fun PatchOptionsScreenContent(
 
             TextDivider(text = stringResource(R.string.patchopts_divider_basic))
 
-            SwitchPatchOption(
+            IconPatchOption(
                 icon = painterResource(R.drawable.ic_extension),
                 name = stringResource(R.string.patchopts_replace_voice_engine_title),
                 description = stringResource(R.string.patchopts_replace_voice_engine_desc),
-                value = replaceVoiceEngine,
-                onValueChange = setReplaceVoiceEngine,
-            )
-
-            if (replaceVoiceEngine) {
-                IconPatchOption(
-                    icon = painterResource(R.drawable.ic_extension),
-                    name = stringResource(R.string.patchopts_voice_engine_title),
-                    description = stringResource(R.string.patchopts_voice_engine_desc),
-                ) {
-                    Column(
-                        horizontalAlignment = Alignment.End,
-                        verticalArrangement = Arrangement.spacedBy(4.dp),
-                    ) {
-                        FilledTonalButton(onClick = onPickVoiceEngine) {
-                            Text(
-                                text = voiceEnginePath?.let { File(it).name }
-                                    ?: stringResource(R.string.patchopts_voice_engine_none)
-                            )
-                        }
-                        TextButton(onClick = onOpenApkMirror) {
-                            Text(stringResource(R.string.patchopts_apkmirror))
-                        }
-                    }
-                }
+            ) {
+                Text(
+                    text = stringResource(R.string.patchopts_voice_engine_auto),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.primary,
+                )
             }
 
             IconPatchOption(
@@ -219,18 +163,9 @@ fun PatchOptionsScreenContent(
                         oldLogo = oldLogo,
                         size = 34.dp,
                     )
-
-                    selectedImage() != null -> customIconDrawable(
-                        foregroundIcon = selectedImage()!!,
-                    )
-
-                    else -> discordIconDrawable(
-                        backgroundColor = Color.Black,
-                        oldLogo = false,
-                        size = 34.dp,
-                    )
+                    selectedImage() != null -> customIconDrawable(foregroundIcon = selectedImage()!!)
+                    else -> discordIconDrawable(backgroundColor = Color.Black, oldLogo = false, size = 34.dp)
                 }
-
                 Drawable(
                     drawable = drawable,
                     modifier = Modifier
@@ -240,11 +175,7 @@ fun PatchOptionsScreenContent(
                 )
             }
 
-            val appNameIsDefault by remember {
-                derivedStateOf {
-                    appName == PatchOptions.Default.appName
-                }
-            }
+            val appNameIsDefault by remember { derivedStateOf { appName == PatchOptions.Default.appName } }
             TextPatchOption(
                 name = stringResource(R.string.patchopts_appname_title),
                 description = stringResource(R.string.patchopts_appname_desc),
@@ -256,11 +187,7 @@ fun PatchOptionsScreenContent(
             )
 
             if (!isUpdate) {
-                val packageNameIsDefault by remember {
-                    derivedStateOf {
-                        packageName == PatchOptions.Default.packageName
-                    }
-                }
+                val packageNameIsDefault by remember { derivedStateOf { packageName == PatchOptions.Default.packageName } }
                 TextPatchOption(
                     name = stringResource(R.string.patchopts_pkgname_title),
                     description = stringResource(R.string.patchopts_pkgname_desc),
@@ -270,10 +197,7 @@ fun PatchOptionsScreenContent(
                     onValueChange = setPackageName,
                     onValueReset = { setPackageName(PatchOptions.Default.packageName) },
                 ) {
-                    PackageNameStateLabel(
-                        state = packageNameState,
-                        modifier = Modifier.padding(start = 4.dp),
-                    )
+                    PackageNameStateLabel(state = packageNameState, modifier = Modifier.padding(start = 4.dp))
                 }
             }
 
@@ -282,7 +206,6 @@ fun PatchOptionsScreenContent(
                     text = stringResource(R.string.patchopts_divider_advanced),
                     modifier = Modifier.padding(top = 12.dp),
                 )
-
                 SwitchPatchOption(
                     icon = painterResource(R.drawable.ic_bug),
                     name = stringResource(R.string.patchopts_debuggable_title),
@@ -290,7 +213,6 @@ fun PatchOptionsScreenContent(
                     value = debuggable,
                     onValueChange = setDebuggable,
                 )
-
                 IconPatchOption(
                     icon = painterResource(R.drawable.ic_extension),
                     name = stringResource(R.string.patchopts_custom_injector_title),
@@ -298,13 +220,9 @@ fun PatchOptionsScreenContent(
                     modifier = Modifier.clickable(onClick = onSelectCustomInjector),
                 ) {
                     FilledTonalButton(onClick = onSelectCustomInjector) {
-                        Text(
-                            text = customInjector?.version?.toString()
-                                ?: stringResource(R.string.componentopts_selected_none)
-                        )
+                        Text(customInjector?.version?.toString() ?: stringResource(R.string.componentopts_selected_none))
                     }
                 }
-
                 IconPatchOption(
                     icon = painterResource(R.drawable.ic_extension),
                     name = stringResource(R.string.patchopts_custom_patches_title),
@@ -312,25 +230,17 @@ fun PatchOptionsScreenContent(
                     modifier = Modifier.clickable(onClick = onSelectCustomPatches),
                 ) {
                     FilledTonalButton(onClick = onSelectCustomPatches) {
-                        Text(
-                            text = customPatches?.version?.toString()
-                                ?: stringResource(R.string.componentopts_selected_none)
-                        )
+                        Text(customPatches?.version?.toString() ?: stringResource(R.string.componentopts_selected_none))
                     }
                 }
             }
 
             Spacer(Modifier.height(16.dp))
-
             FilledTonalButton(
                 enabled = isConfigValid,
                 onClick = onInstall,
-                colors = ButtonDefaults.filledTonalButtonColors(
-                    contentColor = MaterialTheme.colorScheme.primary,
-                ),
-                modifier = Modifier
-                    .padding(bottom = 10.dp)
-                    .align(Alignment.End),
+                colors = ButtonDefaults.filledTonalButtonColors(contentColor = MaterialTheme.colorScheme.primary),
+                modifier = Modifier.padding(bottom = 10.dp).align(Alignment.End),
             ) {
                 Text(stringResource(R.string.action_install))
             }

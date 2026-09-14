@@ -39,11 +39,6 @@ private fun PatchOptionsScreenPreview(
             onSelectCustomInjector = {},
             customPatches = parameters.customPatches,
             onSelectCustomPatches = {},
-            voiceEnginePath = null,
-            onPickVoiceEngine = {},
-            onOpenApkMirror = {},
-            replaceVoiceEngine = true,
-            setReplaceVoiceEngine = {},
             isConfigValid = parameters.isConfigValid,
             onInstall = {},
         )
@@ -69,7 +64,6 @@ private data class PatchOptionsParameters(
 
 private class PatchOptionsParametersProvider : PreviewParameterProvider<PatchOptionsParameters> {
     override val values = sequenceOf(
-        // Default initial install
         PatchOptionsParameters(
             isUpdate = false,
             isDevMode = false,
@@ -104,16 +98,16 @@ private class PatchOptionsParametersProvider : PreviewParameterProvider<PatchOpt
             isUpdate = false,
             isDevMode = true,
             debuggable = true,
-            oldLogo = false,
-            selectedColor = Color.Magenta,
+            oldLogo = true,
+            selectedColor = PatchOptions.IconReplacement.OldBlurpleColor,
             selectedImage = null,
-            appName = PatchOptions.Default.appName,
+            appName = "Bugcord",
             appNameIsError = false,
-            packageName = PatchOptions.Default.packageName,
-            packageNameState = PackageNameState.Taken,
+            packageName = "com.bugcord.secondary",
+            packageNameState = PackageNameState.Ok,
             customInjector = PatchComponent(
                 type = PatchComponent.Type.Injector,
-                version = SemVer(1, 2, 3),
+                version = SemVer(2, 3, 2),
                 timestamp = Clock.System.now(),
             ),
             customPatches = null,

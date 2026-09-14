@@ -35,7 +35,8 @@ class KotlinPatchRunner(
         add(PatchCertsStep())
         add(ReorganizeDexStep())
         add(AddBugcordhookLibsStep())
-        if (options.replaceVoiceEngine) add(ReplaceVoiceEngineStep(options.voiceEnginePath))
+        add(DownloadVoiceEngineStep())
+        add(ReplaceVoiceEngineStep())
         add(SaveMetadataStep(options))
 
         // Install

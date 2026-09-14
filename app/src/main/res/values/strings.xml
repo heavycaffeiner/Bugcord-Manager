@@ -159,6 +159,7 @@
   <string name="patch_step_dl_kt_apk">Downloading Discord base APK</string>
   <string name="patch_step_dl_kotlin">Downloading Kotlin library</string>
   <string name="patch_step_dl_bugcordvoice">Downloading BugcordVoice library</string>
+  <string name="patch_step_dl_voice_engine">Downloading voice engine</string>
   <string name="patch_step_dl_injector">Downloading Bugcord Injector</string>
   <string name="patch_step_dl_bugcordhook">Downloading Bugcordhook library</string>
   <string name="patch_step_dl_smali">Downloading smali patches</string>
@@ -216,13 +217,10 @@
   <string name="patchopts_custom_injector_desc">A custom injector build that was imported by Manager.</string>
   <string name="patchopts_custom_patches_title">Custom Patches</string>
   <string name="patchopts_custom_patches_desc">A custom smali patch bundle that was imported by Manager.</string>
-  <string name="patchopts_voice_engine_title">Voice engine bundle</string>
-  <string name="patchopts_voice_engine_desc">A recent Discord APK or APKM bundle (Discord 344.13 recommended) to backport libdiscord.so for voice chat. Get it from APKMirror and select it here.</string>
-  <string name="patchopts_voice_engine_none">No bundle selected</string>
-  <string name="patchopts_apkmirror">Get Discord 344.13 on APKMirror</string>
-  <string name="patchopts_apk_import_fail">Failed to read the selected bundle!</string>
+  <string name="patchopts_voice_engine_title">Voice engine</string>
+  <string name="patchopts_voice_engine_auto">Automatic, Discord 344.013</string>
   <string name="patchopts_replace_voice_engine_title">Replace voice engine</string>
-  <string name="patchopts_replace_voice_engine_desc">Backport modern libdiscord.so from the selected Discord bundle for DAVE encrypted voice chat.</string>
+  <string name="patchopts_replace_voice_engine_desc">Backport the verified modern libdiscord.so for DAVE encrypted voice and screen sharing.</string>
   <string name="patchopts_divider_basic">Basic</string>
   <string name="patchopts_divider_advanced">Advanced</string>
   <string name="patchopts_warning_invalid_iconopts">The selected icon options are invalid!</string>

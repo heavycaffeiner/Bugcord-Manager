@@ -38,22 +38,14 @@ jobs:
           }
 
           repo="https://github.com/thirdscam"
-          fetch "$repo/Bugcord-axml/releases/download/1.0.1/axml-1.0.1.jar" \
-            local-repo/com/bugcord/axml/1.0.1/axml-1.0.1.jar
-          fetch "$repo/Bugcord-axml/releases/download/1.0.1/axml-1.0.1.pom" \
-            local-repo/com/bugcord/axml/1.0.1/axml-1.0.1.pom
-          fetch "$repo/Bugcord-binary-resources/releases/download/2.1.0/binary-resources-2.1.0.aar" \
-            local-repo/com/bugcord/binary-resources/2.1.0/binary-resources-2.1.0.aar
-          fetch "$repo/Bugcord-binary-resources/releases/download/2.1.0/binary-resources-2.1.0.pom" \
-            local-repo/com/bugcord/binary-resources/2.1.0/binary-resources-2.1.0.pom
-          fetch "$repo/Bugcord-binary-resources/releases/download/2.1.0/binary-resources-2.1.0.module" \
-            local-repo/com/bugcord/binary-resources/2.1.0/binary-resources-2.1.0.module
-          fetch "$repo/Bugcord-libsu/releases/download/6.0.0/core-6.0.0.aar" \
-            local-repo/com/bugcord/libsu/core/6.0.0/core-6.0.0.aar
-          fetch "$repo/Bugcord-libsu/releases/download/6.0.0/core-6.0.0.pom" \
-            local-repo/com/bugcord/libsu/core/6.0.0/core-6.0.0.pom
-          fetch "$repo/Bugcord-libsu/releases/download/6.0.0/core-6.0.0.module" \
-            local-repo/com/bugcord/libsu/core/6.0.0/core-6.0.0.module
+          fetch "$repo/Bugcord-axml/releases/download/1.0.1/axml-1.0.1.jar" local-repo/com/bugcord/axml/1.0.1/axml-1.0.1.jar
+          fetch "$repo/Bugcord-axml/releases/download/1.0.1/axml-1.0.1.pom" local-repo/com/bugcord/axml/1.0.1/axml-1.0.1.pom
+          fetch "$repo/Bugcord-binary-resources/releases/download/2.1.0/binary-resources-2.1.0.aar" local-repo/com/bugcord/binary-resources/2.1.0/binary-resources-2.1.0.aar
+          fetch "$repo/Bugcord-binary-resources/releases/download/2.1.0/binary-resources-2.1.0.pom" local-repo/com/bugcord/binary-resources/2.1.0/binary-resources-2.1.0.pom
+          fetch "$repo/Bugcord-binary-resources/releases/download/2.1.0/binary-resources-2.1.0.module" local-repo/com/bugcord/binary-resources/2.1.0/binary-resources-2.1.0.module
+          fetch "$repo/Bugcord-libsu/releases/download/6.0.0/core-6.0.0.aar" local-repo/com/bugcord/libsu/core/6.0.0/core-6.0.0.aar
+          fetch "$repo/Bugcord-libsu/releases/download/6.0.0/core-6.0.0.pom" local-repo/com/bugcord/libsu/core/6.0.0/core-6.0.0.pom
+          fetch "$repo/Bugcord-libsu/releases/download/6.0.0/core-6.0.0.module" local-repo/com/bugcord/libsu/core/6.0.0/core-6.0.0.module
 
       - name: Build with Gradle
         env:

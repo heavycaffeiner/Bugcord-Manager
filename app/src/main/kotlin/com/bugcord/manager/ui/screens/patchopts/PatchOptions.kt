@@ -41,19 +41,9 @@ data class PatchOptions(
     val customInjector: PatchComponent? = null,
 
     /**
-     * A custom smali patches bundle that was used rather than the latest.
+     * A custom smali patch bundle that was used rather than the latest.
      */
     val customPatches: PatchComponent? = null,
-
-    /**
-     * Discord APK the user supplied as the source of libdiscord.so, copied into app storage.
-     */
-    val voiceEnginePath: String? = null,
-
-    /**
-     * Whether the supplied voice engine replacement is injected.
-     */
-    val replaceVoiceEngine: Boolean = true,
 ) : Parcelable {
     @Immutable
     @Parcelize
